@@ -21,6 +21,9 @@
       .menu-drawer.hidden {
         transform: translateX(-100%);
       }
+      .active {
+        border-bottom: 1px solid #cb4154;
+      }
     </style>
     <title>South Asian Canadian FilmMakers Federation</title>
   </head>
@@ -43,11 +46,15 @@
         />
       </div>
       <nav class="hidden md:flex w-full">
-        <ul class="flex w-full gap-x-7 justify-center text-lg uppercase">
-          <li class="hover:text-[#CB4154]"><a href="index.html">Home</a></li>
-          <li class="hover:text-[#CB4154]"><a href="programs.html">Programs</a></li>
+        <ul class="flex w-full gap-x-10 justify-center text-lg uppercase">
+          <li class="hover:text-[#CB4154] active">
+            <a href="index.html">Home</a>
+          </li>
+          <li class="hover:text-[#CB4154]">
+            <a href="programs.html">Programs</a>
+          </li>
           <li class="hover:text-[#CB4154]"><a href="#">Events</a></li>
-          <li class="hover:text-[#CB4154]"><a href="#">Resources</a></li>
+          <li class="hover:text-[#CB4154]"><a href="resource.html">Resources</a></li>
           <li class="hover:text-[#CB4154]"><a href="#">About Us</a></li>
           <li class="hover:text-[#CB4154]"><a href="#">Join</a></li>
         </ul>
@@ -64,7 +71,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="programs.html">Programs</a></li>
         <li><a href="#">Events</a></li>
-        <li><a href="#">Resources</a></li>
+        <li><a href="resource.html">Resources</a></li>
         <li><a href="#">About Us</a></li>
         <li><a href="#">Join</a></li>
       </ul>
@@ -303,6 +310,18 @@
 
       closeButton.addEventListener("click", () => {
         drawer.classList.add("hidden");
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const navItems = document.querySelectorAll("nav ul li");
+
+        navItems.forEach((item) => {
+          item.addEventListener("click", function () {
+            navItems.forEach((nav) => nav.classList.remove("active"));
+            this.classList.add("active");
+          });
+        });
       });
     </script>
   </body>
