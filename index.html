@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Open Sans", sans-serif;
+      }
+      .menu-drawer {
+        transition: transform 0.3s ease;
+        z-index: 1;
+      }
+      .menu-drawer.hidden {
+        transform: translateX(-100%);
+      }
+    </style>
+    <title>South Asian Canadian FilmMakers Federation</title>
+  </head>
+  <body>
+    <!-- Nav Bar Section -->
+    <section
+      class="flex flex-col justify-center items-center w-full px-6 py-8 md:px-36"
+    >
+      <div class="flex w-full justify-center gap-x-10 items-center">
+        <button
+          id="menu-button"
+          class="md:hidden mt-4 text-xl font-bold text-[#CB4154]"
+        >
+          ☰
+        </button>
+        <img
+          src="./assets/logo.jpg"
+          alt=""
+          class="flex w-[200px] h-[200px] text-center pt-6"
+        />
+      </div>
+      <nav class="hidden md:flex w-full">
+        <ul class="flex w-full gap-x-7 justify-center text-lg uppercase">
+          <li class="hover:text-[#CB4154]"><a href="index.html">Home</a></li>
+          <li class="hover:text-[#CB4154]"><a href="programs.html">Programs</a></li>
+          <li class="hover:text-[#CB4154]"><a href="#">Events</a></li>
+          <li class="hover:text-[#CB4154]"><a href="#">Resources</a></li>
+          <li class="hover:text-[#CB4154]"><a href="#">About Us</a></li>
+          <li class="hover:text-[#CB4154]"><a href="#">Join</a></li>
+        </ul>
+      </nav>
+    </section>
+
+    <!-- Menu Drawer Section -->
+    <div
+      id="drawer"
+      class="menu-drawer fixed top-0 left-0 w-[250px] h-full bg-white text-black hidden md:hidden"
+    >
+      <button id="close-button" class="p-4">✕ Close</button>
+      <ul class="flex flex-col gap-y-6 p-6 text-lg uppercase">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Join</a></li>
+      </ul>
+    </div>
+
+    <!-- Welcome Section -->
+    <section
+      class="relative p-6 md:p-10 bg-black w-full h-[314px] object-cover"
+    >
+      <img
+        src="./assets/banner.jpg"
+        alt="Background Image"
+        class="absolute inset-0 w-full h-full object-cover opacity-30"
+      />
+      <div
+        class="relative flex flex-col items-center justify-center h-full text-center px-4 md:px-8 mx-auto max-w-3xl"
+      >
+        <h1 class="text-white text-xl md:text-2xl break-words mb-4 md:mb-6">
+          Join the vibrant community of South Asian at the South Asian Canadian
+          Film Federation
+        </h1>
+        <button class="bg-[#CB4154] p-4 md:p-6 text-white font-bold uppercase">
+          Become A Member
+        </button>
+      </div>
+    </section>
+    <!-- Mission Section -->
+    <section class="flex p-6 md:p-10 w-full">
+      <div class="flex flex-col mx-4 md:mx-80 items-center text-center gap-y-4">
+        <h1 class="text-xl md:text-2xl font-medium">Our Mission</h1>
+        <p class="text-sm md:text-base">
+          At the South Asian Canadian Film Federation, our mission is to elevate
+          and empower South Asian voices within the Canadian film industry. We
+          provide a vibrant platform for like-minded filmmakers with shared
+          roots to connect, collaborate, and thrive.
+        </p>
+        <button
+          class="bg-[#CB4154] px-4 py-2 md:px-6 md:py-3 text-white font-bold uppercase"
+        >
+          Learn More
+        </button>
+      </div>
+    </section>
+
+    <!-- Gallery pages -->
+
+    <section class="p-6 md:p-10 mx-4 md:mx-20 flex flex-col md:flex-row">
+      <div
+        class="flex flex-col bg-[#fbf1f2] mb-6 md:mb-0 md:mx-4 pb-10 items-center w-full md:w-1/3"
+      >
+        <img src="./assets/thumb3.jpg" alt="" class="w-full" />
+        <h1 class="text-xl md:text-2xl font-medium text-center py-6">
+          Programs
+        </h1>
+        <p class="text-sm md:text-base flex-wrap text-center mx-4 md:mx-8 pb-6">
+          From professional development to mentorship, workshops, masterclasses
+          and much more, SACFF offers a wide range of programs for individuals
+          from all levels looking to grow in the film and television industry in
+          Canada.
+        </p>
+        <button
+          class="bg-[#CB4154] px-4 py-2 text-white font-bold uppercase flex"
+        >
+          Learn More
+        </button>
+      </div>
+      <div
+        class="flex flex-col bg-[#fbf1f2] mb-6 md:mb-0 md:mx-4 pb-10 items-center w-full md:w-1/3"
+      >
+        <img src="./assets/thumb1.jpg" alt="" class="w-full" />
+        <h1 class="text-xl md:text-2xl font-medium text-center py-6">Events</h1>
+        <p class="text-sm md:text-base flex-wrap text-center mx-4 md:mx-8 pb-6">
+          Our members get access to special industry and networking events that
+          are organized to connect Canadian creators with each other.
+        </p>
+        <button
+          class="bg-[#CB4154] px-4 py-2 text-white font-bold uppercase flex"
+        >
+          Upcoming Events
+        </button>
+      </div>
+      <div
+        class="flex flex-col bg-[#fbf1f2] md:mx-4 pb-10 items-center w-full md:w-1/3"
+      >
+        <img src="./assets/thumb-2.jpg" alt="" class="w-full" />
+        <h1 class="text-xl md:text-2xl font-medium text-center py-6">
+          Resources
+        </h1>
+        <p class="text-sm md:text-base flex-wrap text-center mx-4 md:mx-8 pb-6">
+          Here's a list of helpful links for funding, not-for-profit
+          organizations and much more.
+        </p>
+        <button
+          class="bg-[#CB4154] px-4 py-2 text-white font-bold uppercase flex"
+        >
+          Helpful Links
+        </button>
+      </div>
+    </section>
+    <!-- Subscribe Section -->
+    <section class="flex py-10 w-full justify-center items-center">
+      <div
+        class="flex flex-col items-center gap-y-4 px-4 lg:px-0 w-full max-w-lg lg:max-w-2xl"
+      >
+        <h1 class="text-3xl lg:text-4xl">Subscribe</h1>
+        <div class="flex flex-col gap-y-4 w-full">
+          <h2
+            class="text-base lg:text-lg text-[#5e5e5e] text-center lg:text-center"
+          >
+            Sign up to stay up to date with the latest events and programming.
+          </h2>
+          <div
+            class="flex flex-col lg:flex-row w-full justify-center lg:justify-center items-center gap-4 lg:gap-x-5"
+          >
+            <input
+              type="email"
+              placeholder="Email"
+              class="bg-white p-3 lg:p-4 border-2 border-gray-300 w-full lg:w-auto"
+              aria-label="Email"
+            />
+            <button
+              class="bg-[#CB4154] p-3 lg:p-4 text-white font-bold uppercase w-full lg:w-auto"
+            >
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Banner Section -->
+    <section
+      class="relative p-2 md:p-10 bg-black w-full h-[225px] object-cover"
+    >
+      <img
+        src="./assets/banner2.jpg"
+        alt="Background Image"
+        class="absolute inset-0 w-full h-full object-cover opacity-30"
+      />
+      <div
+        class="relative flex flex-col items-center justify-center h-full text-center px-4 md:px-8 mx-auto max-w-3xl"
+      >
+        <h1 class="text-white text-lg md:text-xl break-words mb-4 md:mb-6">
+          We acknowledge the lands which constitute the present-day City of
+          Mississauga as being part of the Treaty and Traditional Territory of
+          the Mississaugas of the Credit First Nation, The Haudenosaunee
+          Confederacy, the Huron-Wendat and Wyandot Nations.
+        </h1>
+      </div>
+    </section>
+
+    <!-- Contact us Section -->
+    <section class="p-6 lg:p-10 flex flex-col lg:flex-row">
+      <div class="flex flex-col lg:flex-row w-full lg:mx-40">
+        <div
+          class="flex flex-col bg-[#fbf1f2] w-full lg:w-1/2 px-6 lg:px-16 py-10"
+        >
+          <h1 class="text-xl lg:text-2xl text-[#cb4154] my-4 lg:my-6">
+            CONTACT US
+          </h1>
+          <p class="text-lg lg:text-xl text-[#5e5e5e] my-4 lg:my-6">
+            We are here to facilitate any development, partnership and
+            networking opportunities.
+          </p>
+          <h2 class="text-xl lg:text-2xl mt-5 lg:mt-7">
+            South Asian Canadian Filmmakers Federation
+          </h2>
+          <p class="text-lg lg:text-xl text-[#5e5e5e] my-4 lg:my-6">
+            Mississauga, ON. Canada
+          </p>
+          <a href="#" class="text-[#CB4154] text-lg lg:text-xl"
+            >info@sacff.ca</a
+          >
+          <a href="#" class="text-[#CB4154] text-lg lg:text-xl mt-2"
+            >southasianfilmmakers@gmail.com</a
+          >
+          <div class="flex justify-start py-4 lg:py-6">
+            <button
+              class="bg-[#CB4154] px-6 py-3 lg:px-4 lg:py-4 text-white font-bold uppercase"
+            >
+              Drop US A Line !
+            </button>
+          </div>
+        </div>
+        <div class="flex flex-col w-full lg:w-1/2 mt-6 lg:mt-0">
+          <div class="w-full h-64 lg:h-full">
+            <iframe
+              width="100%"
+              height="100%"
+              title="location"
+              frameborder="0"
+              scrolling="no"
+              marginheight="0"
+              marginwidth="0"
+              src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=City%20Centre%20Mississauga,%20Ontario,%20Canada+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+              ><a href="https://www.gps.ie/">gps devices</a></iframe
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer section -->
+    <section
+      class="flex flex-col py-8 px-4 md:px-8 justify-center items-center"
+    >
+      <div class="flex flex-col text-center w-full">
+        <h2 class="text-sm md:text-md font-medium text-center py-4 md:py-8">
+          COPYRIGHT © 2024 SOUTH ASIAN CANADIAN FILMMAKERS FEDERATION - ALL
+          RIGHTS RESERVED.
+        </h2>
+        <nav class="flex w-full justify-center items-center">
+          <ul
+            class="flex flex-col md:flex-row w-full gap-y-3 md:gap-y-0 md:gap-x-5 justify-center text-md md:text-lg text-[#CB4154]"
+          >
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Programs</a></li>
+            <li><a href="#">Upcoming Events</a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="#">What is Scaff?</a></li>
+            <li><a href="#">Board of Directors</a></li>
+            <li><a href="#">Staff</a></li>
+            <li><a href="#">Join</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+    <script>
+      const menuButton = document.getElementById("menu-button");
+      const closeButton = document.getElementById("close-button");
+      const drawer = document.getElementById("drawer");
+
+      menuButton.addEventListener("click", () => {
+        drawer.classList.toggle("hidden");
+      });
+
+      closeButton.addEventListener("click", () => {
+        drawer.classList.add("hidden");
+      });
+    </script>
+  </body>
+</html>
