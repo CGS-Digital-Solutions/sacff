@@ -46,7 +46,7 @@
         />
       </div>
       <nav class="hidden md:flex w-full">
-        <ul class="flex w-full gap-x-10 justify-center text-lg uppercase">
+        <ul class="flex w-full gap-x-10 justify-center text-lg uppercase z-50">
           <li class="hover:text-[#CB4154] active">
             <a href="index.html">Home</a>
           </li>
@@ -54,9 +54,39 @@
             <a href="programs.html">Programs</a>
           </li>
           <li class="hover:text-[#CB4154]"><a href="#">Events</a></li>
-          <li class="hover:text-[#CB4154]"><a href="resource.html">Resources</a></li>
-          <li class="hover:text-[#CB4154]"><a href="#">About Us</a></li>
-          <li class="hover:text-[#CB4154]"><a href="#">Join</a></li>
+          <li class="hover:text-[#CB4154]">
+            <a href="resource.html">Resources</a>
+          </li>
+          <li class="relative">
+            <button
+              id="about-us-desktop-button"
+              class="flex items-center hover:text-[#CB4154]"
+            >
+              About Us
+              <span class="ml-1">&#x25BC;</span>
+            </button>
+            <ul
+              id="about-us-desktop-dropdown"
+              class="absolute hidden flex-col bg-white shadow-2xl pt-5 w-[180px]"
+            >
+              <li class="hover:bg-gray-200">
+                <a href="about1.html" class="block px-4 py-2 text-sm"
+                  >What is Scaff?</a
+                >
+              </li>
+              <li class="hover:bg-gray-200">
+                <a href="about2.html" class="block px-4 py-2 text-sm"
+                  >Board Of Directors</a
+                >
+              </li>
+              <li class="hover:bg-gray-200">
+                <a href="about3.html" class="block px-4 py-2 text-sm"
+                  >Staff</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="hover:text-[#CB4154]"><a href="join.html">Join</a></li>
         </ul>
       </nav>
     </section>
@@ -72,8 +102,30 @@
         <li><a href="programs.html">Programs</a></li>
         <li><a href="#">Events</a></li>
         <li><a href="resource.html">Resources</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Join</a></li>
+        <li class="relative">
+          <button
+            id="about-us-mobile-button"
+            class="w-full text-left flex items-center z-50"
+          >
+            About Us
+            <span class="ml-1">&#x25BC;</span>
+          </button>
+          <ul
+            id="about-us-mobile-dropdown"
+            class="hiddenflex-col bg-white shadow-lg mt-2 z-50"
+          >
+            <li class="hover:bg-gray-200">
+              <a href="about1.html" class="block px-4 py-2">About Us 1</a>
+            </li>
+            <li class="hover:bg-gray-200">
+              <a href="about2.html" class="block px-4 py-2">About Us 2</a>
+            </li>
+            <li class="hover:bg-gray-200">
+              <a href="about3.html" class="block px-4 py-2">About Us 3</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="join.html">Join</a></li>
       </ul>
     </div>
 
@@ -294,7 +346,7 @@
             <li><a href="#">What is Scaff?</a></li>
             <li><a href="#">Board of Directors</a></li>
             <li><a href="#">Staff</a></li>
-            <li><a href="#">Join</a></li>
+            <li><a href="join.html">Join</a></li>
           </ul>
         </nav>
       </div>
@@ -311,8 +363,44 @@
       closeButton.addEventListener("click", () => {
         drawer.classList.add("hidden");
       });
-    </script>
-    <script>
+
+      // Dropdown toggle
+      const aboutUsDesktopButton = document.getElementById(
+        "about-us-desktop-button"
+      );
+      const aboutUsDesktopDropdown = document.getElementById(
+        "about-us-desktop-dropdown"
+      );
+      const aboutUsMobileButton = document.getElementById(
+        "about-us-mobile-button"
+      );
+      const aboutUsMobileDropdown = document.getElementById(
+        "about-us-mobile-dropdown"
+      );
+
+      aboutUsDesktopButton.addEventListener("click", () => {
+        aboutUsDesktopDropdown.classList.toggle("hidden");
+      });
+
+      aboutUsMobileButton.addEventListener("click", () => {
+        aboutUsMobileDropdown.classList.toggle("hidden");
+      });
+
+      document.addEventListener("click", function (event) {
+        if (
+          !aboutUsDesktopButton.contains(event.target) &&
+          !aboutUsDesktopDropdown.contains(event.target)
+        ) {
+          aboutUsDesktopDropdown.classList.add("hidden");
+        }
+        if (
+          !aboutUsMobileButton.contains(event.target) &&
+          !aboutUsMobileDropdown.contains(event.target)
+        ) {
+          aboutUsMobileDropdown.classList.add("hidden");
+        }
+      });
+
       document.addEventListener("DOMContentLoaded", function () {
         const navItems = document.querySelectorAll("nav ul li");
 

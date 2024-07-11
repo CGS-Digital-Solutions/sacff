@@ -25,14 +25,13 @@
         border-bottom: 1px solid #cb4154;
       }
     </style>
-    <title>Resources</title>
+    <title>JOIN</title>
   </head>
   <body>
-    <!-- Nav Bar Section -->
     <section
       class="flex flex-col justify-center items-center w-full px-6 py-8 md:px-36"
     >
-      <div class="flex w-full justify-center gap-x-10 items-center">
+      <div class="flex w-full justify-between md:justify-center items-center">
         <button
           id="menu-button"
           class="md:hidden mt-4 text-xl font-bold text-[#CB4154]"
@@ -41,8 +40,8 @@
         </button>
         <img
           src="./assets/logo.jpg"
-          alt=""
-          class="flex w-[200px] h-[200px] text-center pt-6"
+          alt="Logo"
+          class="w-[100px] h-[100px] md:w-[200px] md:h-[200px] pt-6 mx-auto"
         />
       </div>
       <nav class="hidden md:flex w-full">
@@ -52,11 +51,13 @@
             <a href="programs.html">Programs</a>
           </li>
           <li class="hover:text-[#CB4154]"><a href="#">Events</a></li>
-          <li class="hover:text-[#CB4154] active">
+          <li class="hover:text-[#CB4154]">
             <a href="resource.html">Resources</a>
           </li>
           <li class="hover:text-[#CB4154]"><a href="#">About Us</a></li>
-          <li class="hover:text-[#CB4154]"><a href="#">Join</a></li>
+          <li class="hover:text-[#CB4154] active">
+            <a href="join.html">Join</a>
+          </li>
         </ul>
       </nav>
     </section>
@@ -71,65 +72,116 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="programs.html">Programs</a></li>
         <li><a href="#">Events</a></li>
-        <li><a href="#">Resources</a></li>
+        <li><a href="resource.html">Resources</a></li>
         <li><a href="#">About Us</a></li>
         <li><a href="join.html">Join</a></li>
       </ul>
     </div>
 
-    <section class="p-8 md:p-36 flex flex-col gap-y-10 md:gap-y-16 w-full">
+    <!-- Join Section -->
+    <section class="flex flex-col md:flex-row p-6 md:p-36 gap-y-6 md:gap-y-0">
       <div class="flex flex-col px-2 w-full gap-y-6 md:gap-y-10">
-        <h1 class="text-2xl text-[#cb4154] uppercase">Funding Organizations</h1>
-        <div class="flex flex-col md:px-32 gap-y-3 md:gap-y-5">
-          <h2 class="text-xl md:text-2xl">Canada Media Fund</h2>
-          <a href="http://cmf-fmc.ca" class="text-lg text-[#cb4154]"
-            >http://cmf-fmc.ca</a
-          >
-        </div>
-        <div class="flex flex-col md:px-32 gap-y-3 md:gap-y-5">
-          <h2 class="text-xl md:text-2xl">Telefilm Canada</h2>
-          <a href="http://telefilm.ca" class="text-lg text-[#cb4154]"
-            >http://telefilm.ca</a
-          >
-        </div>
-        <div class="flex flex-col md:px-32 gap-y-3 md:gap-y-5">
-          <h2 class="text-xl md:text-2xl">Ontario Creates</h2>
-          <a href="http://ontariocreates.ca" class="text-lg text-[#cb4154]"
-            >http://ontariocreates.ca</a
-          >
-        </div>
-        <div class="flex flex-col md:px-32 gap-y-3 md:gap-y-5">
-          <h2 class="text-xl md:text-2xl">Canada Council for the Arts</h2>
-          <a href="https://canadacouncil.ca" class="text-lg text-[#cb4154]"
-            >https://canadacouncil.ca</a
-          >
-        </div>
-      </div>
-      <div class="flex flex-col px-2 w-full gap-y-6 md:gap-y-10">
-        <h1 class="text-2xl text-[#cb4154] uppercase">
-          Other Not For Profit Organizations
+        <h1 class="text-2xl md:text-3xl text-[#cb4154] uppercase">
+          Funding Organizations
         </h1>
-        <div class="flex flex-col md:px-32 gap-y-3 md:gap-y-5">
-          <h2 class="text-xl md:text-2xl">BIPOC TV & FILM</h2>
-          <a href="http://bipoctv.ca" class="text-lg text-[#cb4154]"
-            >http://bipoctv.ca</a
-          >
-        </div>
-        <div class="flex flex-col md:px-32 gap-y-3 md:gap-y-5">
-          <h2 class="text-xl md:text-2xl">WIFT Toronto</h2>
-          <a href="http://wift.com" class="text-lg text-[#cb4154]"
-            >http://wift.com</a
-          >
+        <div class="flex flex-col md:px-5 gap-y-3 md:gap-y-5">
+          <h2 class="text-xl md:text-2xl">Canada Media Fund</h2>
+          <h2 class="text-xl md:text-2xl">
+            We would love for you to join our vibrant community of creatives.
+          </h2>
+          <p class="text-gray-500 text-xl">
+            SACFF is dedicated to building a community which is safe,
+            accessible, equitable, and inclusive. We strive to advance careers
+            of South Asian creatives in Canada through various programs, events,
+            workshops and mentorship opportunities.
+          </p>
         </div>
       </div>
       <div class="flex flex-col px-2 w-full gap-y-6 md:gap-y-10">
-        <h1 class="text-2xl text-[#cb4154] uppercase">Helpful Links</h1>
-        <div class="flex flex-col md:px-32 gap-y-3 md:gap-y-5">
-          <h2 class="text-xl md:text-2xl">Coming Soon</h2>
-        </div>
+        <h1 class="text-2xl md:text-3xl">SCAFF Membership</h1>
+        <input
+          type="text"
+          class="p-4 bg-white focus:outline-2 focus:outline-gray-400 border-b-2"
+          placeholder="Full Name"
+          aria-label=""
+        />
+        <input
+          type="text"
+          class="p-4 bg-white focus:outline-2 focus:outline-gray-400 border-b-2"
+          placeholder="My Pronouns"
+          aria-label=""
+        />
+        <input
+          type="text"
+          class="p-4 bg-white focus:outline-2 focus:outline-gray-400 border-b-2"
+          placeholder="Gender"
+          aria-label=""
+        />
+        <input
+          type="number"
+          class="p-4 bg-white focus:outline-2 focus:outline-gray-400 border-b-2"
+          placeholder="Phone"
+          aria-label=""
+        />
+        <input
+          type="email"
+          class="p-4 bg-white focus:outline-2 focus:outline-gray-400 border-b-2"
+          placeholder="Email"
+          aria-label=""
+        />
+        <input
+          type="text"
+          class="p-4 bg-white focus:outline-2 focus:outline-gray-400 border-b-2"
+          placeholder="Full Address"
+          aria-label=""
+        />
+        <input
+          type="text"
+          class="p-4 bg-white focus:outline-2 focus:outline-gray-400 border-b-2"
+          placeholder="Industry"
+          aria-label=""
+        />
+        <input
+          type="text"
+          class="p-4 bg-white focus:outline-2 focus:outline-gray-400 border-b-2"
+          placeholder="Profession"
+          aria-label=""
+        />
+        <input
+          type="text"
+          class="p-4 bg-white focus:outline-2 focus:outline-gray-400 border-b-2"
+          placeholder="Company"
+          aria-label=""
+        />
+        <input
+          type="text"
+          class="p-4 bg-white focus:outline-2 focus:outline-gray-400 border-b-2"
+          placeholder="Position"
+          aria-label=""
+        />
+        <input
+          type="text"
+          class="p-4 bg-white focus:outline-2 focus:outline-gray-400 border-b-2"
+          placeholder="Website"
+          aria-label=""
+        />
+        <input
+          type="text"
+          class="p-4 bg-white focus:outline-2 focus:outline-gray-400 border-b-2"
+          placeholder="IMDB Link"
+          aria-label=""
+        />
+        <button
+          class="bg-[#CB4154] p-4 md:p-6 text-white font-bold shadow-xl uppercase"
+        >
+          Submit MEMBERSHIP Form
+        </button>
+        <p class="text-sm text-center">
+          This site is protected by reCAPTCHA and the Google Privacy Policy and
+          Terms of Service apply.
+        </p>
       </div>
     </section>
-
     <!-- Footer Section -->
     <section
       class="flex flex-col py-8 px-4 md:px-8 justify-center items-center"
@@ -143,8 +195,8 @@
           <ul
             class="flex flex-col md:flex-row w-full gap-y-3 md:gap-y-0 md:gap-x-5 justify-center text-md md:text-lg text-[#CB4154]"
           >
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Programs</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="programs.html">Programs</a></li>
             <li><a href="#">Upcoming Events</a></li>
             <li><a href="#">Resources</a></li>
             <li><a href="#">What is Scaff?</a></li>
