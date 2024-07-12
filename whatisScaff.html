@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Open Sans", sans-serif;
+      }
+      .menu-drawer {
+        transition: transform 0.3s ease;
+        z-index: 1;
+      }
+      .menu-drawer.hidden {
+        transform: translateX(-100%);
+      }
+      .active {
+        border-bottom: 1px solid #cb4154;
+      }
+    </style>
+    <title>What is Scaff?</title>
+  </head>
+  <body>
+    <!-- Nav Bar Section -->
+    <section
+      class="flex flex-col justify-center items-center w-full px-6 py-8 md:px-36"
+    >
+      <div class="flex w-full justify-center gap-x-10 items-center">
+        <button
+          id="menu-button"
+          class="md:hidden mt-4 text-xl font-bold text-[#CB4154]"
+        >
+          ☰
+        </button>
+        <img
+          src="./assets/logo.jpg"
+          alt=""
+          class="flex w-[200px] h-[200px] text-center pt-6"
+        />
+      </div>
+      <nav class="hidden md:flex w-full">
+        <ul class="flex w-full gap-x-10 justify-center text-lg uppercase z-50">
+          <li class="hover:text-[#CB4154]">
+            <a href="index.html">Home</a>
+          </li>
+          <li class="hover:text-[#CB4154]">
+            <a href="programs.html">Programs</a>
+          </li>
+          <li class="hover:text-[#CB4154]"><a href="#">Events</a></li>
+          <li class="hover:text-[#CB4154]">
+            <a href="resource.html">Resources</a>
+          </li>
+          <li class="relative">
+            <button
+              id="about-us-desktop-button"
+              class="flex items-center hover:text-[#CB4154] active"
+            >
+              About Us
+              <span class="ml-1">&#x25BC;</span>
+            </button>
+            <ul
+              id="about-us-desktop-dropdown"
+              class="absolute hidden flex-col bg-white shadow-2xl pt-5 w-[180px]"
+            >
+              <li class="hover:bg-gray-200">
+                <a href="about1.html" class="block px-4 py-2 text-sm"
+                  >What is Scaff?</a
+                >
+              </li>
+              <li class="hover:bg-gray-200">
+                <a href="about2.html" class="block px-4 py-2 text-sm"
+                  >Board Of Directors</a
+                >
+              </li>
+              <li class="hover:bg-gray-200">
+                <a href="about3.html" class="block px-4 py-2 text-sm">Staff</a>
+              </li>
+            </ul>
+          </li>
+          <li class="hover:text-[#CB4154]"><a href="join.html">Join</a></li>
+        </ul>
+      </nav>
+    </section>
+
+    <!-- Menu Drawer Section -->
+    <div
+      id="drawer"
+      class="menu-drawer fixed top-0 left-0 w-[250px] h-full bg-white text-black hidden md:hidden"
+    >
+      <button id="close-button" class="p-4">✕ Close</button>
+      <ul class="flex flex-col gap-y-6 p-6 text-lg uppercase">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="resource.html">Resources</a></li>
+        <li class="relative">
+          <button
+            id="about-us-mobile-button"
+            class="w-full text-left flex items-center z-50"
+          >
+            About Us
+            <span class="ml-1">&#x25BC;</span>
+          </button>
+          <ul
+            id="about-us-mobile-dropdown"
+            class="hiddenflex-col bg-white shadow-lg mt-2 z-50"
+          >
+            <li class="hover:bg-gray-200">
+              <a href="whatisScaff.html" class="block px-4 py-2"
+                >What is Scaff</a
+              >
+            </li>
+            <li class="hover:bg-gray-200">
+              <a href="about2.html" class="block px-4 py-2">About Us 2</a>
+            </li>
+            <li class="hover:bg-gray-200">
+              <a href="about3.html" class="block px-4 py-2">About Us 3</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+    </div>
+    <!-- What is Scaff Section -->
+    <section class="px-24 py-24 gap-y-10 flex flex-col">
+      <div class="flex flex-col px-10 gap-y-6 w-full">
+        <h1 class="text-[#cb4154] text-2xl">
+          SOUTH ASIAN CANADIAN FILMMAKERS FEDERATION
+        </h1>
+        <div class="flex flex-col w-full bg-[#fbf1f2]">
+          <img src="./assets/about-us.jpg" alt="" />
+          <div class="flex flex-col justify-center items-center p-10">
+            <h1 class="text-2xl text-center pb-10">What is SACFF?</h1>
+            <p class="text-base text-center">
+              The South Asian Canadian Filmmakers Federation is a community of
+              dedicated filmmakers with a shared vision of elevating South Asian
+              voices within the Canadian film industry. Our federation aims to
+              create a vibrant platform where like-minded individuals with
+              shared roots can connect, collaborate, and thrive. Through our
+              networking events and partnerships with industry professionals and
+              organizations, we provide opportunities for mentorships, funding,
+              distribution, and job placements, ensuring our members'
+              representation and visibility in the film fraternity. Our
+              commitment to promoting diversity and fostering meaningful
+              partnerships has already made a positive impact on the Canadian
+              film landscape. As we continue on this journey, we envision a
+              future where South Asian Canadian filmmakers' narratives and
+              perspectives shine prominently, enriching the cinematic tapestry
+              with their unique stories. Join us in advancing the art of
+              filmmaking and creating a more inclusive and vibrant Canadian film
+              industry. Together, we celebrate the power of storytelling and
+              look forward to making a lasting impact in the world of Canadian
+              cinema.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="flex gap-x-10 px-10">
+        <div class="flex gap-y-6 bg-[#fbf1f2]">
+          <div class="flex flex-col">
+            <img src="./assets/about2.jpg" alt="" />
+            <div class="flex flex-col justify-center items-center p-10 gap-y-6">
+              <h1 class="text-2xl text-center pb-10">Partner With Us</h1>
+              <p class="text-base text-center">
+                Become a SACFF Sponsor or Partner to make an impact through
+                various programs and events. Your company can make a difference
+                by working together with us to elevate South Asian voices in the
+                Canadian Film and Television industry. Let's connect and
+                discover how we can work together.
+              </p>
+              <button
+                class="bg-[#CB4154] px-4 py-2 md:px-6 md:py-3 text-white font-bold uppercase"
+              >
+                Connect with US
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="flex gap-y-6 bg-[#fbf1f2]">
+          <div class="flex flex-col">
+            <img src="./assets/about1.jpg" alt="" />
+            <div class="flex flex-col justify-center items-center p-10 gap-y-6">
+              <h1 class="text-2xl text-center pb-10">
+                Volunteer Opportunities
+              </h1>
+              <p class="text-base text-center">
+                Want to get involved with the South Asian Canadian Filmmakers
+                Federation? We're always looking for volunteers to help us make
+                our events and programs a success. Learn more about how you can
+                help by emailing us.
+              </p>
+              <button
+                class="bg-[#CB4154] px-4 py-2 md:px-6 md:py-3 text-white font-bold uppercase"
+              >
+                EMAIL US
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="px-6 py-12 md:px-24 md:py-24 flex w-full justify-center">
+      <div
+        class="flex flex-col md:flex-row w-full max-w-4xl items-center space-y-4 md:space-y-0 md:space-x-4"
+      >
+        <h1
+          class="text-xl md:text-2xl text-center md:text-left w-full md:w-auto"
+        >
+          Subscribe
+        </h1>
+        <div
+          class="flex flex-col md:flex-row w-full items-center space-y-4 md:space-y-0 md:space-x-4"
+        >
+          <input
+            type="text"
+            class="p-4 bg-white focus:outline-none focus:ring-2 focus:ring-gray-400 border-b-2 w-full"
+            placeholder="Full Name"
+            aria-label="Full Name"
+          />
+          <button
+            class="bg-[#CB4154] px-4 py-2 md:px-6 md:py-3 text-white font-bold uppercase w-full md:w-auto"
+          >
+            Email Us
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-24 py-24 flex justify-center">
+      <div class="px-10 flex gap-x-6 justify-center">
+          <img src="./assets/facebook.png" alt="">
+          <img src="./assets/instagram.png" alt="">
+      </div>
+    </section>
+
+    <!-- Footer section -->
+    <section
+      class="flex flex-col py-8 px-4 md:px-8 justify-center items-center"
+    >
+      <div class="flex flex-col text-center w-full">
+        <h2 class="text-sm md:text-md font-medium text-center py-4 md:py-8">
+          COPYRIGHT © 2024 SOUTH ASIAN CANADIAN FILMMAKERS FEDERATION - ALL
+          RIGHTS RESERVED.
+        </h2>
+        <nav class="flex w-full justify-center items-center">
+          <ul
+            class="flex flex-col md:flex-row w-full gap-y-3 md:gap-y-0 md:gap-x-5 justify-center text-md md:text-lg text-[#CB4154]"
+          >
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Programs</a></li>
+            <li><a href="#">Upcoming Events</a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="#">What is Scaff?</a></li>
+            <li><a href="#">Board of Directors</a></li>
+            <li><a href="#">Staff</a></li>
+            <li><a href="join.html">Join</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+    <script>
+      const menuButton = document.getElementById("menu-button");
+      const closeButton = document.getElementById("close-button");
+      const drawer = document.getElementById("drawer");
+
+      menuButton.addEventListener("click", () => {
+        drawer.classList.toggle("hidden");
+      });
+
+      closeButton.addEventListener("click", () => {
+        drawer.classList.add("hidden");
+      });
+
+      // Dropdown toggle
+      const aboutUsDesktopButton = document.getElementById(
+        "about-us-desktop-button"
+      );
+      const aboutUsDesktopDropdown = document.getElementById(
+        "about-us-desktop-dropdown"
+      );
+      const aboutUsMobileButton = document.getElementById(
+        "about-us-mobile-button"
+      );
+      const aboutUsMobileDropdown = document.getElementById(
+        "about-us-mobile-dropdown"
+      );
+
+      aboutUsDesktopButton.addEventListener("click", () => {
+        aboutUsDesktopDropdown.classList.toggle("hidden");
+      });
+
+      aboutUsMobileButton.addEventListener("click", () => {
+        aboutUsMobileDropdown.classList.toggle("hidden");
+      });
+
+      document.addEventListener("click", function (event) {
+        if (
+          !aboutUsDesktopButton.contains(event.target) &&
+          !aboutUsDesktopDropdown.contains(event.target)
+        ) {
+          aboutUsDesktopDropdown.classList.add("hidden");
+        }
+        if (
+          !aboutUsMobileButton.contains(event.target) &&
+          !aboutUsMobileDropdown.contains(event.target)
+        ) {
+          aboutUsMobileDropdown.classList.add("hidden");
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const navItems = document.querySelectorAll("nav ul li");
+
+        navItems.forEach((item) => {
+          item.addEventListener("click", function () {
+            navItems.forEach((nav) => nav.classList.remove("active"));
+            this.classList.add("active");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
