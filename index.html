@@ -55,14 +55,14 @@
           </li>
           <li class="relative">
             <button
-              id="about-us-desktop-button"
+              id="events-desktop-button"
               class="flex items-center hover:text-[#CB4154]"
             >
               Events
               <span class="ml-1">&#x25BC;</span>
             </button>
             <ul
-              id="about-us-desktop-dropdown"
+              id="events-desktop-dropdown"
               class="absolute hidden flex-col bg-white shadow-2xl pt-5 w-[230px]"
             >
               <li class="hover:bg-gray-200">
@@ -76,7 +76,9 @@
                 >
               </li>
               <li class="hover:bg-gray-200">
-                <a href="council-application-guide.html" class="block px-4 py-2 text-sm"
+                <a
+                  href="council-application-guide.html"
+                  class="block px-4 py-2 text-sm"
                   >Council Application Guide</a
                 >
               </li>
@@ -103,7 +105,7 @@
                 >
               </li>
               <li class="hover:bg-gray-200">
-                <a href="about2.html" class="block px-4 py-2 text-sm"
+                <a href="board-of-directors.html" class="block px-4 py-2 text-sm"
                   >Board Of Directors</a
                 >
               </li>
@@ -128,15 +130,15 @@
         <li><a href="programs.html">Programs</a></li>
         <li class="relative">
           <button
-            id="about-us-mobile-button"
+            id="events-mobile-button"
             class="w-full text-left flex items-center z-50"
           >
             Events
             <span class="ml-1">&#x25BC;</span>
           </button>
           <ul
-            id="about-us-mobile-dropdown"
-            class="hiddenflex-col bg-white shadow-lg mt-2 z-50"
+            id="events-mobile-dropdown"
+            class="hidden flex-col bg-white shadow-lg mt-2 z-50"
           >
             <li class="hover:bg-gray-200">
               <a href="upcoming-events.html" class="block px-4 py-2"
@@ -144,11 +146,15 @@
               >
             </li>
             <li class="hover:bg-gray-200">
-              <a href="about2.html" class="block px-4 py-2">About Us 2</a>
+              <a href="about2.html" class="block px-4 py-2">Past Events</a>
             </li>
             <li class="hover:bg-gray-200">
-              <a href="council-application-guide.html" class="block px-4 py-2">Council Application Guide</a>
+              <a href="council-application-guide.html" class="block px-4 py-2"
+                >Council Application Guide</a
+              >
             </li>
+          </ul>
+        </li>
         <li><a href="resource.html">Resources</a></li>
         <li class="relative">
           <button
@@ -160,7 +166,7 @@
           </button>
           <ul
             id="about-us-mobile-dropdown"
-            class="hiddenflex-col bg-white shadow-lg mt-2 z-50"
+            class="hidden flex-col bg-white shadow-lg mt-2 z-50"
           >
             <li class="hover:bg-gray-200">
               <a href="whatisScaff.html" class="block px-4 py-2"
@@ -168,7 +174,9 @@
               >
             </li>
             <li class="hover:bg-gray-200">
-              <a href="about2.html" class="block px-4 py-2">About Us 2</a>
+              <a href="about2.html" class="block px-4 py-2"
+                >Board Of Directors</a
+              >
             </li>
             <li class="hover:bg-gray-200">
               <a href="staff.html" class="block px-4 py-2">Staff</a>
@@ -402,65 +410,38 @@
       </div>
     </section>
     <script>
-      const menuButton = document.getElementById("menu-button");
-      const closeButton = document.getElementById("close-button");
-      const drawer = document.getElementById("drawer");
-
-      menuButton.addEventListener("click", () => {
-        drawer.classList.toggle("hidden");
+      document.getElementById("menu-button").addEventListener("click", () => {
+        document.getElementById("drawer").classList.toggle("hidden");
+      });
+      document.getElementById("close-button").addEventListener("click", () => {
+        document.getElementById("drawer").classList.add("hidden");
       });
 
-      closeButton.addEventListener("click", () => {
-        drawer.classList.add("hidden");
-      });
+      function toggleDropdown(buttonId, dropdownId) {
+        const button = document.getElementById(buttonId);
+        const dropdown = document.getElementById(dropdownId);
 
-      // Dropdown toggle
-      const aboutUsDesktopButton = document.getElementById(
-        "about-us-desktop-button"
-      );
-      const aboutUsDesktopDropdown = document.getElementById(
-        "about-us-desktop-dropdown"
-      );
-      const aboutUsMobileButton = document.getElementById(
-        "about-us-mobile-button"
-      );
-      const aboutUsMobileDropdown = document.getElementById(
-        "about-us-mobile-dropdown"
-      );
-
-      aboutUsDesktopButton.addEventListener("click", () => {
-        aboutUsDesktopDropdown.classList.toggle("hidden");
-      });
-
-      aboutUsMobileButton.addEventListener("click", () => {
-        aboutUsMobileDropdown.classList.toggle("hidden");
-      });
-
-      document.addEventListener("click", function (event) {
-        if (
-          !aboutUsDesktopButton.contains(event.target) &&
-          !aboutUsDesktopDropdown.contains(event.target)
-        ) {
-          aboutUsDesktopDropdown.classList.add("hidden");
-        }
-        if (
-          !aboutUsMobileButton.contains(event.target) &&
-          !aboutUsMobileDropdown.contains(event.target)
-        ) {
-          aboutUsMobileDropdown.classList.add("hidden");
-        }
-      });
-
-      document.addEventListener("DOMContentLoaded", function () {
-        const navItems = document.querySelectorAll("nav ul li");
-
-        navItems.forEach((item) => {
-          item.addEventListener("click", function () {
-            navItems.forEach((nav) => nav.classList.remove("active"));
-            this.classList.add("active");
-          });
+        button.addEventListener("click", () => {
+          dropdown.classList.toggle("hidden");
         });
-      });
+
+        window.addEventListener("click", (event) => {
+          if (
+            !button.contains(event.target) &&
+            !dropdown.contains(event.target)
+          ) {
+            dropdown.classList.add("hidden");
+          }
+        });
+      }
+
+      // Desktop dropdowns
+      toggleDropdown("events-desktop-button", "events-desktop-dropdown");
+      toggleDropdown("about-us-desktop-button", "about-us-desktop-dropdown");
+
+      // Mobile dropdowns
+      toggleDropdown("events-mobile-button", "events-mobile-dropdown");
+      toggleDropdown("about-us-mobile-button", "about-us-mobile-dropdown");
     </script>
   </body>
 </html>

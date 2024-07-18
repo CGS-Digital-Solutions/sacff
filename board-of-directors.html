@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Open Sans", sans-serif;
+      }
+      .menu-drawer {
+        transition: transform 0.3s ease;
+        z-index: 1;
+      }
+      .menu-drawer.hidden {
+        transform: translateX(-100%);
+      }
+      .active {
+        border-bottom: 1px solid #cb4154;
+      }
+    </style>
+    <title>Board Of Directors</title>
+  </head>
+  <body>
+        <!-- Nav Bar Section -->
+        <section
+        class="flex flex-col justify-center items-center w-full px-6 py-8 md:px-36"
+      >
+        <div class="flex w-full justify-center gap-x-10 items-center">
+          <button
+            id="menu-button"
+            class="md:hidden mt-4 text-xl font-bold text-[#CB4154]"
+          >
+            ☰
+          </button>
+          <img
+            src="./assets/logo.jpg"
+            alt=""
+            class="flex w-[200px] h-[200px] text-center pt-6"
+          />
+        </div>
+        <nav class="hidden md:flex w-full">
+          <ul class="flex w-full gap-x-10 justify-center text-lg uppercase z-50">
+            <li class="hover:text-[#CB4154] active">
+              <a href="index.html">Home</a>
+            </li>
+            <li class="hover:text-[#CB4154]">
+              <a href="programs.html">Programs</a>
+            </li>
+            <li class="relative">
+              <button
+                id="events-desktop-button"
+                class="flex items-center hover:text-[#CB4154]"
+              >
+                Events
+                <span class="ml-1">&#x25BC;</span>
+              </button>
+              <ul
+                id="events-desktop-dropdown"
+                class="absolute hidden flex-col bg-white shadow-2xl pt-5 w-[230px]"
+              >
+                <li class="hover:bg-gray-200">
+                  <a href="upcoming-events.html" class="block px-4 py-2 text-sm"
+                    >Upcoming Events</a
+                  >
+                </li>
+                <li class="hover:bg-gray-200">
+                  <a href="about2.html" class="block px-4 py-2 text-sm"
+                    >Past Events</a
+                  >
+                </li>
+                <li class="hover:bg-gray-200">
+                  <a
+                    href="council-application-guide.html"
+                    class="block px-4 py-2 text-sm"
+                    >Council Application Guide</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="hover:text-[#CB4154]">
+              <a href="resource.html">Resources</a>
+            </li>
+            <li class="relative">
+              <button
+                id="about-us-desktop-button"
+                class="flex items-center hover:text-[#CB4154]"
+              >
+                About Us
+                <span class="ml-1">&#x25BC;</span>
+              </button>
+              <ul
+                id="about-us-desktop-dropdown"
+                class="absolute hidden flex-col bg-white shadow-2xl pt-5 w-[180px]"
+              >
+                <li class="hover:bg-gray-200">
+                  <a href="whatisScaff.html" class="block px-4 py-2 text-sm"
+                    >What is Sacff?</a
+                  >
+                </li>
+                <li class="hover:bg-gray-200">
+                  <a href="board-of-directors.html" class="block px-4 py-2 text-sm"
+                    >Board Of Directors</a
+                  >
+                </li>
+                <li class="hover:bg-gray-200">
+                  <a href="staff.html" class="block px-4 py-2 text-sm">Staff</a>
+                </li>
+              </ul>
+            </li>
+            <li class="hover:text-[#CB4154]"><a href="join.html">Join</a></li>
+          </ul>
+        </nav>
+      </section>
+  
+      <!-- Menu Drawer Section -->
+      <div
+        id="drawer"
+        class="menu-drawer fixed top-0 left-0 w-[250px] h-full bg-white text-black hidden md:hidden"
+      >
+        <button id="close-button" class="p-4">✕ Close</button>
+        <ul class="flex flex-col gap-y-6 p-6 text-lg uppercase">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li class="relative">
+            <button
+              id="events-mobile-button"
+              class="w-full text-left flex items-center z-50"
+            >
+              Events
+              <span class="ml-1">&#x25BC;</span>
+            </button>
+            <ul
+              id="events-mobile-dropdown"
+              class="hidden flex-col bg-white shadow-lg mt-2 z-50"
+            >
+              <li class="hover:bg-gray-200">
+                <a href="upcoming-events.html" class="block px-4 py-2"
+                  >Upcoming Events</a
+                >
+              </li>
+              <li class="hover:bg-gray-200">
+                <a href="about2.html" class="block px-4 py-2">Past Events</a>
+              </li>
+              <li class="hover:bg-gray-200">
+                <a href="council-application-guide.html" class="block px-4 py-2"
+                  >Council Application Guide</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li><a href="resource.html">Resources</a></li>
+          <li class="relative">
+            <button
+              id="about-us-mobile-button"
+              class="w-full text-left flex items-center z-50"
+            >
+              About Us
+              <span class="ml-1">&#x25BC;</span>
+            </button>
+            <ul
+              id="about-us-mobile-dropdown"
+              class="hidden flex-col bg-white shadow-lg mt-2 z-50"
+            >
+              <li class="hover:bg-gray-200">
+                <a href="whatisScaff.html" class="block px-4 py-2"
+                  >What is Sacff?</a
+                >
+              </li>
+              <li class="hover:bg-gray-200">
+                <a href="about2.html" class="block px-4 py-2"
+                  >Board Of Directors</a
+                >
+              </li>
+              <li class="hover:bg-gray-200">
+                <a href="staff.html" class="block px-4 py-2">Staff</a>
+              </li>
+            </ul>
+          </li>
+          <li><a href="join.html">Join</a></li>
+        </ul>
+      </div>
+    <section class="flex p-6 md:p-10 w-full">
+      <h1 class="text-2xl md:text-3xl text-[#cb4154] uppercase">
+        BOARD OF DIRECTORS
+      </h1>
+    </section>
+    <script>
+        document.getElementById("menu-button").addEventListener("click", () => {
+          document.getElementById("drawer").classList.toggle("hidden");
+        });
+        document.getElementById("close-button").addEventListener("click", () => {
+          document.getElementById("drawer").classList.add("hidden");
+        });
+  
+        function toggleDropdown(buttonId, dropdownId) {
+          const button = document.getElementById(buttonId);
+          const dropdown = document.getElementById(dropdownId);
+  
+          button.addEventListener("click", () => {
+            dropdown.classList.toggle("hidden");
+          });
+  
+          window.addEventListener("click", (event) => {
+            if (
+              !button.contains(event.target) &&
+              !dropdown.contains(event.target)
+            ) {
+              dropdown.classList.add("hidden");
+            }
+          });
+        }
+  
+        // Desktop dropdowns
+        toggleDropdown("events-desktop-button", "events-desktop-dropdown");
+        toggleDropdown("about-us-desktop-button", "about-us-desktop-dropdown");
+  
+        // Mobile dropdowns
+        toggleDropdown("events-mobile-button", "events-mobile-dropdown");
+        toggleDropdown("about-us-mobile-button", "about-us-mobile-dropdown");
+      </script>
+  </body>
+</html>

@@ -46,14 +46,74 @@
         />
       </div>
       <nav class="hidden md:flex w-full">
-        <ul class="flex w-full gap-x-10 justify-center text-lg uppercase">
-          <li class="hover:text-[#CB4154]"><a href="index.html">Home</a></li>
+        <ul class="flex w-full gap-x-10 justify-center text-lg uppercase z-50">
           <li class="hover:text-[#CB4154] active">
+            <a href="index.html">Home</a>
+          </li>
+          <li class="hover:text-[#CB4154]">
             <a href="programs.html">Programs</a>
           </li>
-          <li class="hover:text-[#CB4154]"><a href="#">Events</a></li>
-          <li class="hover:text-[#CB4154]"><a href="resource.html">Resources</a></li>
-          <li class="hover:text-[#CB4154]"><a href="#">About Us</a></li>
+          <li class="relative">
+            <button
+              id="events-desktop-button"
+              class="flex items-center hover:text-[#CB4154]"
+            >
+              Events
+              <span class="ml-1">&#x25BC;</span>
+            </button>
+            <ul
+              id="events-desktop-dropdown"
+              class="absolute hidden flex-col bg-white shadow-2xl pt-5 w-[230px]"
+            >
+              <li class="hover:bg-gray-200">
+                <a href="upcoming-events.html" class="block px-4 py-2 text-sm"
+                  >Upcoming Events</a
+                >
+              </li>
+              <li class="hover:bg-gray-200">
+                <a href="about2.html" class="block px-4 py-2 text-sm"
+                  >Past Events</a
+                >
+              </li>
+              <li class="hover:bg-gray-200">
+                <a
+                  href="council-application-guide.html"
+                  class="block px-4 py-2 text-sm"
+                  >Council Application Guide</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="hover:text-[#CB4154]">
+            <a href="resource.html">Resources</a>
+          </li>
+          <li class="relative">
+            <button
+              id="about-us-desktop-button"
+              class="flex items-center hover:text-[#CB4154]"
+            >
+              About Us
+              <span class="ml-1">&#x25BC;</span>
+            </button>
+            <ul
+              id="about-us-desktop-dropdown"
+              class="absolute hidden flex-col bg-white shadow-2xl pt-5 w-[180px]"
+            >
+              <li class="hover:bg-gray-200">
+                <a href="whatisScaff.html" class="block px-4 py-2 text-sm"
+                  >What is Sacff?</a
+                >
+              </li>
+              <li class="hover:bg-gray-200">
+                <a href="board-of-directors.html" class="block px-4 py-2 text-sm"
+                  >Board Of Directors</a
+                >
+              </li>
+              <li class="hover:bg-gray-200">
+                <a href="staff.html" class="block px-4 py-2 text-sm">Staff</a>
+              </li>
+            </ul>
+          </li>
           <li class="hover:text-[#CB4154]"><a href="join.html">Join</a></li>
         </ul>
       </nav>
@@ -68,9 +128,61 @@
       <ul class="flex flex-col gap-y-6 p-6 text-lg uppercase">
         <li><a href="index.html">Home</a></li>
         <li><a href="programs.html">Programs</a></li>
-        <li><a href="#">Events</a></li>
+        <li class="relative">
+          <button
+            id="events-mobile-button"
+            class="w-full text-left flex items-center z-50"
+          >
+            Events
+            <span class="ml-1">&#x25BC;</span>
+          </button>
+          <ul
+            id="events-mobile-dropdown"
+            class="hidden flex-col bg-white shadow-lg mt-2 z-50"
+          >
+            <li class="hover:bg-gray-200">
+              <a href="upcoming-events.html" class="block px-4 py-2"
+                >Upcoming Events</a
+              >
+            </li>
+            <li class="hover:bg-gray-200">
+              <a href="about2.html" class="block px-4 py-2">Past Events</a>
+            </li>
+            <li class="hover:bg-gray-200">
+              <a href="council-application-guide.html" class="block px-4 py-2"
+                >Council Application Guide</a
+              >
+            </li>
+          </ul>
+        </li>
         <li><a href="resource.html">Resources</a></li>
-        <li><a href="#">About Us</a></li>
+        <li class="relative">
+          <button
+            id="about-us-mobile-button"
+            class="w-full text-left flex items-center z-50"
+          >
+            About Us
+            <span class="ml-1">&#x25BC;</span>
+          </button>
+          <ul
+            id="about-us-mobile-dropdown"
+            class="hidden flex-col bg-white shadow-lg mt-2 z-50"
+          >
+            <li class="hover:bg-gray-200">
+              <a href="whatisScaff.html" class="block px-4 py-2"
+                >What is Sacff?</a
+              >
+            </li>
+            <li class="hover:bg-gray-200">
+              <a href="about2.html" class="block px-4 py-2"
+                >Board Of Directors</a
+              >
+            </li>
+            <li class="hover:bg-gray-200">
+              <a href="staff.html" class="block px-4 py-2">Staff</a>
+            </li>
+          </ul>
+        </li>
         <li><a href="join.html">Join</a></li>
       </ul>
     </div>
@@ -164,29 +276,38 @@
       </div>
     </section>
     <script>
-      const menuButton = document.getElementById("menu-button");
-      const closeButton = document.getElementById("close-button");
-      const drawer = document.getElementById("drawer");
-
-      menuButton.addEventListener("click", () => {
-        drawer.classList.toggle("hidden");
+      document.getElementById("menu-button").addEventListener("click", () => {
+        document.getElementById("drawer").classList.toggle("hidden");
+      });
+      document.getElementById("close-button").addEventListener("click", () => {
+        document.getElementById("drawer").classList.add("hidden");
       });
 
-      closeButton.addEventListener("click", () => {
-        drawer.classList.add("hidden");
-      });
-    </script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const navItems = document.querySelectorAll("nav ul li");
+      function toggleDropdown(buttonId, dropdownId) {
+        const button = document.getElementById(buttonId);
+        const dropdown = document.getElementById(dropdownId);
 
-        navItems.forEach((item) => {
-          item.addEventListener("click", function () {
-            navItems.forEach((nav) => nav.classList.remove("active"));
-            this.classList.add("active");
-          });
+        button.addEventListener("click", () => {
+          dropdown.classList.toggle("hidden");
         });
-      });
+
+        window.addEventListener("click", (event) => {
+          if (
+            !button.contains(event.target) &&
+            !dropdown.contains(event.target)
+          ) {
+            dropdown.classList.add("hidden");
+          }
+        });
+      }
+
+      // Desktop dropdowns
+      toggleDropdown("events-desktop-button", "events-desktop-dropdown");
+      toggleDropdown("about-us-desktop-button", "about-us-desktop-dropdown");
+
+      // Mobile dropdowns
+      toggleDropdown("events-mobile-button", "events-mobile-dropdown");
+      toggleDropdown("about-us-mobile-button", "about-us-mobile-dropdown");
     </script>
   </body>
 </html>
