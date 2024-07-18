@@ -25,10 +25,9 @@
         border-bottom: 1px solid #cb4154;
       }
     </style>
-    <title>Staff</title>
+    <title>Upcoming Events</title>
   </head>
   <body>
-    <!-- Nav Bar Section -->
     <section
       class="flex flex-col justify-center items-center w-full px-6 py-8 md:px-36"
     >
@@ -53,7 +52,35 @@
           <li class="hover:text-[#CB4154]">
             <a href="programs.html">Programs</a>
           </li>
-          <li class="hover:text-[#CB4154]"><a href="#">Events</a></li>
+          <li class="relative">
+            <button
+              id="about-us-desktop-button"
+              class="flex items-center hover:text-[#CB4154]"
+            >
+              Events
+              <span class="ml-1">&#x25BC;</span>
+            </button>
+            <ul
+              id="about-us-desktop-dropdown"
+              class="absolute hidden flex-col bg-white shadow-2xl pt-5 w-[230px]"
+            >
+              <li class="hover:bg-gray-200">
+                <a href="whatisScaff.html" class="block px-4 py-2 text-sm"
+                  >Upcoming Events</a
+                >
+              </li>
+              <li class="hover:bg-gray-200">
+                <a href="about2.html" class="block px-4 py-2 text-sm"
+                  >Past Events</a
+                >
+              </li>
+              <li class="hover:bg-gray-200">
+                <a href="staff.html" class="block px-4 py-2 text-sm"
+                  >Council Application Guide</a
+                >
+              </li>
+            </ul>
+          </li>
           <li class="hover:text-[#CB4154]">
             <a href="resource.html">Resources</a>
           </li>
@@ -80,7 +107,7 @@
                 >
               </li>
               <li class="hover:bg-gray-200">
-                <a href="about3.html" class="block px-4 py-2 text-sm">Staff</a>
+                <a href="staff.html" class="block px-4 py-2 text-sm">Staff</a>
               </li>
             </ul>
           </li>
@@ -113,7 +140,9 @@
             class="hiddenflex-col bg-white shadow-lg mt-2 z-50"
           >
             <li class="hover:bg-gray-200">
-              <a href="whatisScaff.html" class="block px-4 py-2">What is Sacff?</a>
+              <a href="whatisScaff.html" class="block px-4 py-2"
+                >What is Sacff?</a
+              >
             </li>
             <li class="hover:bg-gray-200">
               <a href="about2.html" class="block px-4 py-2">About Us 2</a>
@@ -126,11 +155,78 @@
         <li><a href="join.html">Join</a></li>
       </ul>
     </div>
-    <section class="p-8 md:p-36 flex flex-col gap-y-10 md:gap-y-16 w-full">
-      <div class="flex flex-col px-2 w-full gap-y-6 md:gap-y-10">
-        <h1 class="text-2xl text-[#cb4154] uppercase">Coming Soon</h1>
+    <!-- Upcoming Events Section -->
+    <section class="p-8 md:p-36 flex flex-col gap-10">
+      <div
+        class="flex flex-col md:flex-row py-10 px-5 md:py-20 md:px-10 gap-6 md:gap-x-6"
+      >
+        <div class="flex flex-col w-full gap-y-6">
+          <h1 class="text-xl text-[#cb4154] uppercase">NETWORKING</h1>
+          <h2 class="text-2xl text-black">The Studio Tour + Networking</h2>
+          <p class="text-lg text-gray-600">
+            SACFF Members get a private tour of the a well known Studio followed
+            by a networking opportunity to meet with other Canadian film and
+            television professionals.
+          </p>
+        </div>
+        <div class="flex flex-col px-4 md:px-0">
+          <img
+            src="./assets/networking.jpg"
+            alt="Mentorship Program"
+            class="w-full h-auto object-cover"
+          />
+        </div>
       </div>
     </section>
+    <section class="p-8 md:px-36 md:py-20 flex flex-col gap-10">
+      <div
+        class="flex flex-col md:flex-row py-10 px-5 md:py-20 md:px-10 gap-6 md:gap-x-6"
+      >
+        <h1 class="text-xl text-[#cb4154] uppercase">Contact US</h1>
+      </div>
+      <div class="flex flex-col px-4 md:px-48 py-2 gap-y-6 justify-center">
+        <h1 class="text-3xl text-center">Drop us a line!</h1>
+        <input
+          type="text"
+          class="p-4 bg-white focus:outline-2 focus:outline-gray-400 border-b-2"
+          placeholder="Name"
+          aria-label=""
+        />
+        <input
+          type="email"
+          class="p-4 bg-white focus:outline-2 focus:outline-gray-400 border-b-2"
+          placeholder="Email"
+          aria-label=""
+        />
+        <input
+          type="number"
+          class="p-4 bg-white focus:outline-2 focus:outline-gray-400 border-b-2"
+          placeholder="Phone"
+          aria-label=""
+        />
+        <input
+          type="text"
+          class="p-4 bg-white focus:outline-2 focus:outline-gray-400 border-b-2"
+          placeholder="I'm Interested In"
+          aria-label=""
+        />
+        <input
+          type="text"
+          class="p-4 bg-white focus:outline-2 focus:outline-gray-400 border-b-2"
+          placeholder="Other Notes"
+          aria-label=""
+          rows="10"
+        />
+      </div>
+      <div class="flex px-4 md:px-48 justify-center py-10">
+        <button
+          class="bg-[#CB4154] p-4 md:p-6 text-white items-center font-bold shadow-xl uppercase w-full md:w-1/5"
+        >
+          Send
+        </button>
+      </div>
+    </section>
+
     <!-- Footer section -->
     <section
       class="flex flex-col py-8 px-4 md:px-8 justify-center items-center"
