@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <style>
+      body {
+        font-family: "Open Sans", sans-serif;
+      }
+      .menu-drawer {
+        transition: transform 0.3s ease;
+        z-index: 1;
+      }
+      .menu-drawer.hidden {
+        transform: translateX(-100%);
+      }
+      .active {
+        border-bottom: 1px solid #cb4154;
+      }
+
+      .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 600px;
+        object-fit: cover;
+      }
+
+      .swiper-thumb .swiper-slide {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+      }
+
+      .swiper-thumb .swiper-slide img {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+      }
+    </style>
+    <title>Past Events</title>
+  </head>
+  <body>
+    <!-- Nav Bar Section -->
+    <section
+      class="flex flex-col justify-center items-center w-full px-6 py-8 md:px-36"
+    >
+      <div class="flex w-full justify-center gap-x-10 items-center">
+        <button
+          id="menu-button"
+          class="md:hidden mt-4 text-xl font-bold text-[#CB4154]"
+        >
+          ☰
+        </button>
+        <img
+          src="./assets/logo.jpg"
+          alt="Logo"
+          class="flex w-[200px] h-[200px] text-center pt-6"
+        />
+      </div>
+      <nav class="hidden md:flex w-full">
+        <ul class="flex w-full gap-x-10 justify-center text-lg uppercase z-50">
+          <li class="hover:text-[#CB4154] active">
+            <a href="index.html">Home</a>
+          </li>
+          <li class="hover:text-[#CB4154]">
+            <a href="programs.html">Programs</a>
+          </li>
+          <li class="relative">
+            <button
+              id="events-desktop-button"
+              class="flex items-center hover:text-[#CB4154]"
+            >
+              Events
+              <span class="ml-1">&#x25BC;</span>
+            </button>
+            <ul
+              id="events-desktop-dropdown"
+              class="absolute hidden flex-col bg-white shadow-2xl pt-5 w-[230px]"
+            >
+              <li class="hover:bg-gray-200">
+                <a href="upcoming-events.html" class="block px-4 py-2 text-sm"
+                  >Upcoming Events</a
+                >
+              </li>
+              <li class="hover:bg-gray-200">
+                <a href="about2.html" class="block px-4 py-2 text-sm"
+                  >Past Events</a
+                >
+              </li>
+              <li class="hover:bg-gray-200">
+                <a
+                  href="council-application-guide.html"
+                  class="block px-4 py-2 text-sm"
+                  >Council Application Guide</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="hover:text-[#CB4154]">
+            <a href="resource.html">Resources</a>
+          </li>
+          <li class="relative">
+            <button
+              id="about-us-desktop-button"
+              class="flex items-center hover:text-[#CB4154]"
+            >
+              About Us
+              <span class="ml-1">&#x25BC;</span>
+            </button>
+            <ul
+              id="about-us-desktop-dropdown"
+              class="absolute hidden flex-col bg-white shadow-2xl pt-5 w-[180px]"
+            >
+              <li class="hover:bg-gray-200">
+                <a href="whatisScaff.html" class="block px-4 py-2 text-sm"
+                  >What is Sacff?</a
+                >
+              </li>
+              <li class="hover:bg-gray-200">
+                <a
+                  href="board-of-directors.html"
+                  class="block px-4 py-2 text-sm"
+                  >Board Of Directors</a
+                >
+              </li>
+              <li class="hover:bg-gray-200">
+                <a href="staff.html" class="block px-4 py-2 text-sm">Staff</a>
+              </li>
+            </ul>
+          </li>
+          <li class="hover:text-[#CB4154]">
+            <a href="join.html">Join</a>
+          </li>
+        </ul>
+      </nav>
+    </section>
+
+    <!-- Menu Drawer Section -->
+    <div
+      id="drawer"
+      class="menu-drawer fixed top-0 left-0 w-[250px] h-full bg-white text-black hidden md:hidden"
+    >
+      <button id="close-button" class="p-4">✕ Close</button>
+      <ul class="flex flex-col gap-y-6 p-6 text-lg uppercase">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li class="relative">
+          <button
+            id="events-mobile-button"
+            class="w-full text-left flex items-center z-50"
+          >
+            Events
+            <span class="ml-1">&#x25BC;</span>
+          </button>
+          <ul
+            id="events-mobile-dropdown"
+            class="hidden flex-col bg-white shadow-lg mt-2 z-50"
+          >
+            <li class="hover:bg-gray-200">
+              <a href="upcoming-events.html" class="block px-4 py-2"
+                >Upcoming Events</a
+              >
+            </li>
+            <li class="hover:bg-gray-200">
+              <a href="about2.html" class="block px-4 py-2">Past Events</a>
+            </li>
+            <li class="hover:bg-gray-200">
+              <a href="council-application-guide.html" class="block px-4 py-2"
+                >Council Application Guide</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li><a href="resource.html">Resources</a></li>
+        <li class="relative">
+          <button
+            id="about-us-mobile-button"
+            class="w-full text-left flex items-center z-50"
+          >
+            About Us
+            <span class="ml-1">&#x25BC;</span>
+          </button>
+          <ul
+            id="about-us-mobile-dropdown"
+            class="hidden flex-col bg-white shadow-lg mt-2 z-50"
+          >
+            <li class="hover:bg-gray-200">
+              <a href="whatisScaff.html" class="block px-4 py-2"
+                >What is Sacff?</a
+              >
+            </li>
+            <li class="hover:bg-gray-200">
+              <a href="about2.html" class="block px-4 py-2"
+                >Board Of Directors</a
+              >
+            </li>
+            <li class="hover:bg-gray-200">
+              <a href="staff.html" class="block px-4 py-2">Staff</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+    </div>
+    <!-- Past Events Section -->
+    <section class="flex flex-col gap-y-6 p-6 md:px-40 md:py-16 w-full">
+      <h1 class="text-3xl text-[#cb4154]">
+        “HOW TO PITCH TO PRODUCTION PARTNERS” PANEL & SOUTH ASIAN FILMMAKERS
+        NETWORKING MIXER (MAY 13, 2024)
+      </h1>
+      <div class="swiper mySwiper w-full h-full">
+        <div class="swiper-wrapper w-full h-full">
+          <div class="swiper-slide">
+            <img src="assets/production1.jpg" alt="production" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/production2.jpg" alt="production" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/production3.jpg" alt="production" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/production4.jpg" alt="production" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/production5.jpg" alt="production" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/production6.jpg" alt="production" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/production7.jpg" alt="production" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/production8.jpg" alt="production" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/production9.jpg" alt="production" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/production10.jpg" alt="production" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/production11.jpg" alt="production" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/production12.jpg" alt="production" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/production13.jpg" alt="production" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/production14.jpg" alt="production" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/production15.jpg" alt="production" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/production16.jpg" alt="production" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/production17.jpg" alt="production" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/production18.jpg" alt="production" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/production19.jpg" alt="production" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/production20.jpg" alt="production" />
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <!-- Thumbnails -->
+      <!-- <div class="swiper swiper-thumb mt-6">
+        <div class="swiper-wrapper flex flex-row space-x-2 md:space-x-3">
+          <div class="swiper-slide w-16 h-16 md:w-20 md:h-20">
+            <img
+              src="assets/production1.jpg"
+              alt="production thumb"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="swiper-slide w-16 h-16 md:w-20 md:h-20">
+            <img
+              src="assets/production2.jpg"
+              alt="production thumb"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="swiper-slide w-16 h-16 md:w-20 md:h-20">
+            <img
+              src="assets/production3.jpg"
+              alt="production thumb"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="swiper-slide w-16 h-16 md:w-20 md:h-20">
+            <img
+              src="assets/production4.jpg"
+              alt="production thumb"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="swiper-slide w-16 h-16 md:w-20 md:h-20">
+            <img
+              src="assets/production5.jpg"
+              alt="production thumb"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="swiper-slide w-16 h-16 md:w-20 md:h-20">
+            <img
+              src="assets/production6.jpg"
+              alt="production thumb"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="swiper-slide w-16 h-16 md:w-20 md:h-20">
+            <img
+              src="assets/production7.jpg"
+              alt="production thumb"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="swiper-slide w-16 h-16 md:w-20 md:h-20">
+            <img
+              src="assets/production8.jpg"
+              alt="production thumb"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="swiper-slide w-16 h-16 md:w-20 md:h-20">
+            <img
+              src="assets/production9.jpg"
+              alt="production thumb"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="swiper-slide w-16 h-16 md:w-20 md:h-20">
+            <img
+              src="assets/production10.jpg"
+              alt="production thumb"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="swiper-slide w-16 h-16 md:w-20 md:h-20">
+            <img
+              src="assets/production11.jpg"
+              alt="production thumb"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="swiper-slide w-16 h-16 md:w-20 md:h-20">
+            <img
+              src="assets/production12.jpg"
+              alt="production thumb"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="swiper-slide w-16 h-16 md:w-20 md:h-20">
+            <img
+              src="assets/production13.jpg"
+              alt="production thumb"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="swiper-slide w-16 h-16 md:w-20 md:h-20">
+            <img
+              src="assets/production14.jpg"
+              alt="production thumb"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="swiper-slide w-16 h-16 md:w-20 md:h-20">
+            <img
+              src="assets/production15.jpg"
+              alt="production thumb"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="swiper-slide w-16 h-16 md:w-20 md:h-20">
+            <img
+              src="assets/production16.jpg"
+              alt="production thumb"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="swiper-slide w-16 h-16 md:w-20 md:h-20">
+            <img
+              src="assets/production17.jpg"
+              alt="production thumb"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="swiper-slide w-16 h-16 md:w-20 md:h-20">
+            <img
+              src="assets/production18.jpg"
+              alt="production thumb"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="swiper-slide w-16 h-16 md:w-20 md:h-20">
+            <img
+              src="assets/production19.jpg"
+              alt="production thumb"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="swiper-slide w-16 h-16 md:w-20 md:h-20">
+            <img
+              src="assets/production20.jpg"
+              alt="production thumb"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div> -->
+    </section>
+
+    <section class="flex flex-col gap-y-6 p-6 md:px-40 md:py-16 w-full">
+      <h1 class="text-3xl text-[#cb4154]">
+        SACFF - THE LAUNCH (SEPTEMBER 15, 2023)
+      </h1>
+      <div class="swiper mySwiper w-full h-full">
+        <div class="swiper-wrapper w-full h-full">
+          <div class="swiper-slide">
+            <img src="assets/launch1.jpg" alt="production" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/launch2.jpg" alt="production" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/launch3.jpg" alt="production" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/launch4.jpg" alt="production" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/launch5.jpg" alt="production" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/launch6.jpg" alt="production" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/launch7.jpg" alt="production" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/launch8.jpg" alt="production" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/launch9.jpg" alt="production" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/launch10.jpg" alt="production" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/launch11.jpg" alt="production" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/launch12.jpg" alt="production" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/launch13.jpg" alt="production" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/launch14.jpg" alt="production" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/launch15.jpg" alt="production" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer section -->
+    <section
+      class="flex flex-col py-8 px-4 md:px-8 justify-center items-center"
+    >
+      <div class="flex flex-col text-center w-full">
+        <h2 class="text-sm md:text-md font-medium text-center py-4 md:py-8">
+          COPYRIGHT © 2024 SOUTH ASIAN CANADIAN FILMMAKERS FEDERATION - ALL
+          RIGHTS RESERVED.
+        </h2>
+        <nav class="flex w-full justify-center items-center">
+          <ul
+            class="flex flex-col md:flex-row w-full gap-y-3 md:gap-y-0 md:gap-x-5 justify-center text-md md:text-lg text-[#CB4154]"
+          >
+            <li><a href="index.html">Home</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="upcoming-events.html">Upcoming Events</a></li>
+            <li><a href="resource.html">Resources</a></li>
+            <li><a href="whatisScaff.html">What is Scaff?</a></li>
+            <li><a href="board-of-directors.html">Board of Directors</a></li>
+            <li><a href="staff.html">Staff</a></li>
+            <li><a href="join.html">Join</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+    <!-- NavBar Script -->
+    <script>
+      document.getElementById("menu-button").addEventListener("click", () => {
+        document.getElementById("drawer").classList.toggle("hidden");
+      });
+      document.getElementById("close-button").addEventListener("click", () => {
+        document.getElementById("drawer").classList.add("hidden");
+      });
+
+      function toggleDropdown(buttonId, dropdownId) {
+        const button = document.getElementById(buttonId);
+        const dropdown = document.getElementById(dropdownId);
+
+        button.addEventListener("click", () => {
+          dropdown.classList.toggle("hidden");
+        });
+
+        window.addEventListener("click", (event) => {
+          if (
+            !button.contains(event.target) &&
+            !dropdown.contains(event.target)
+          ) {
+            dropdown.classList.add("hidden");
+          }
+        });
+      }
+
+      // Desktop dropdowns
+      toggleDropdown("events-desktop-button", "events-desktop-dropdown");
+      toggleDropdown("about-us-desktop-button", "about-us-desktop-dropdown");
+
+      // Mobile dropdowns
+      toggleDropdown("events-mobile-button", "events-mobile-dropdown");
+      toggleDropdown("about-us-mobile-button", "about-us-mobile-dropdown");
+    </script>
+    <!-- Swiper Script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+      var swiperThumb = new Swiper(".swiper-thumb", {
+        spaceBetween: 10,
+        slidesPerView: 4,
+        freeMode: true,
+        watchSlidesProgress: true,
+      });
+
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: "auto",
+        spaceBetween: 30,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        thumbs: {
+          swiper: swiperThumb,
+        },
+      });
+    </script>
+  </body>
+</html>
