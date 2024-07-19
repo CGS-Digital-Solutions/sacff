@@ -28,202 +28,404 @@
     <title>Board Of Directors</title>
   </head>
   <body>
-        <!-- Nav Bar Section -->
-        <section
-        class="flex flex-col justify-center items-center w-full px-6 py-8 md:px-36"
-      >
-        <div class="flex w-full justify-center gap-x-10 items-center">
-          <button
-            id="menu-button"
-            class="md:hidden mt-4 text-xl font-bold text-[#CB4154]"
-          >
-            ☰
-          </button>
-          <img
-            src="./assets/logo.jpg"
-            alt=""
-            class="flex w-[200px] h-[200px] text-center pt-6"
-          />
-        </div>
-        <nav class="hidden md:flex w-full">
-          <ul class="flex w-full gap-x-10 justify-center text-lg uppercase z-50">
-            <li class="hover:text-[#CB4154] active">
-              <a href="index.html">Home</a>
-            </li>
-            <li class="hover:text-[#CB4154]">
-              <a href="programs.html">Programs</a>
-            </li>
-            <li class="relative">
-              <button
-                id="events-desktop-button"
-                class="flex items-center hover:text-[#CB4154]"
-              >
-                Events
-                <span class="ml-1">&#x25BC;</span>
-              </button>
-              <ul
-                id="events-desktop-dropdown"
-                class="absolute hidden flex-col bg-white shadow-2xl pt-5 w-[230px]"
-              >
-                <li class="hover:bg-gray-200">
-                  <a href="upcoming-events.html" class="block px-4 py-2 text-sm"
-                    >Upcoming Events</a
-                  >
-                </li>
-                <li class="hover:bg-gray-200">
-                  <a href="about2.html" class="block px-4 py-2 text-sm"
-                    >Past Events</a
-                  >
-                </li>
-                <li class="hover:bg-gray-200">
-                  <a
-                    href="council-application-guide.html"
-                    class="block px-4 py-2 text-sm"
-                    >Council Application Guide</a
-                  >
-                </li>
-              </ul>
-            </li>
-            <li class="hover:text-[#CB4154]">
-              <a href="resource.html">Resources</a>
-            </li>
-            <li class="relative">
-              <button
-                id="about-us-desktop-button"
-                class="flex items-center hover:text-[#CB4154]"
-              >
-                About Us
-                <span class="ml-1">&#x25BC;</span>
-              </button>
-              <ul
-                id="about-us-desktop-dropdown"
-                class="absolute hidden flex-col bg-white shadow-2xl pt-5 w-[180px]"
-              >
-                <li class="hover:bg-gray-200">
-                  <a href="whatisScaff.html" class="block px-4 py-2 text-sm"
-                    >What is Sacff?</a
-                  >
-                </li>
-                <li class="hover:bg-gray-200">
-                  <a href="board-of-directors.html" class="block px-4 py-2 text-sm"
-                    >Board Of Directors</a
-                  >
-                </li>
-                <li class="hover:bg-gray-200">
-                  <a href="staff.html" class="block px-4 py-2 text-sm">Staff</a>
-                </li>
-              </ul>
-            </li>
-            <li class="hover:text-[#CB4154]"><a href="join.html">Join</a></li>
-          </ul>
-        </nav>
-      </section>
-  
-      <!-- Menu Drawer Section -->
-      <div
-        id="drawer"
-        class="menu-drawer fixed top-0 left-0 w-[250px] h-full bg-white text-black hidden md:hidden"
-      >
-        <button id="close-button" class="p-4">✕ Close</button>
-        <ul class="flex flex-col gap-y-6 p-6 text-lg uppercase">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="programs.html">Programs</a></li>
+    <!-- Nav Bar Section -->
+    <section
+      class="flex flex-col justify-center items-center w-full px-6 py-8 md:px-36"
+    >
+      <div class="flex w-full justify-center gap-x-10 items-center">
+        <button
+          id="menu-button"
+          class="md:hidden mt-4 text-xl font-bold text-[#CB4154]"
+        >
+          ☰
+        </button>
+        <img
+          src="./assets/logo.jpg"
+          alt=""
+          class="flex w-[200px] h-[200px] text-center pt-6"
+        />
+      </div>
+      <nav class="hidden md:flex w-full">
+        <ul class="flex w-full gap-x-10 justify-center text-lg uppercase z-50">
+          <li class="hover:text-[#CB4154] active">
+            <a href="index.html">Home</a>
+          </li>
+          <li class="hover:text-[#CB4154]">
+            <a href="programs.html">Programs</a>
+          </li>
           <li class="relative">
             <button
-              id="events-mobile-button"
-              class="w-full text-left flex items-center z-50"
+              id="events-desktop-button"
+              class="flex items-center hover:text-[#CB4154]"
             >
               Events
               <span class="ml-1">&#x25BC;</span>
             </button>
             <ul
-              id="events-mobile-dropdown"
-              class="hidden flex-col bg-white shadow-lg mt-2 z-50"
+              id="events-desktop-dropdown"
+              class="absolute hidden flex-col bg-white shadow-2xl pt-5 w-[230px]"
             >
               <li class="hover:bg-gray-200">
-                <a href="upcoming-events.html" class="block px-4 py-2"
+                <a href="upcoming-events.html" class="block px-4 py-2 text-sm"
                   >Upcoming Events</a
                 >
               </li>
               <li class="hover:bg-gray-200">
-                <a href="about2.html" class="block px-4 py-2">Past Events</a>
+                <a href="about2.html" class="block px-4 py-2 text-sm"
+                  >Past Events</a
+                >
               </li>
               <li class="hover:bg-gray-200">
-                <a href="council-application-guide.html" class="block px-4 py-2"
+                <a
+                  href="council-application-guide.html"
+                  class="block px-4 py-2 text-sm"
                   >Council Application Guide</a
                 >
               </li>
             </ul>
           </li>
-          <li><a href="resource.html">Resources</a></li>
+          <li class="hover:text-[#CB4154]">
+            <a href="resource.html">Resources</a>
+          </li>
           <li class="relative">
             <button
-              id="about-us-mobile-button"
-              class="w-full text-left flex items-center z-50"
+              id="about-us-desktop-button"
+              class="flex items-center hover:text-[#CB4154]"
             >
               About Us
               <span class="ml-1">&#x25BC;</span>
             </button>
             <ul
-              id="about-us-mobile-dropdown"
-              class="hidden flex-col bg-white shadow-lg mt-2 z-50"
+              id="about-us-desktop-dropdown"
+              class="absolute hidden flex-col bg-white shadow-2xl pt-5 w-[180px]"
             >
               <li class="hover:bg-gray-200">
-                <a href="whatisScaff.html" class="block px-4 py-2"
+                <a href="whatisScaff.html" class="block px-4 py-2 text-sm"
                   >What is Sacff?</a
                 >
               </li>
               <li class="hover:bg-gray-200">
-                <a href="about2.html" class="block px-4 py-2"
+                <a
+                  href="board-of-directors.html"
+                  class="block px-4 py-2 text-sm"
                   >Board Of Directors</a
                 >
               </li>
               <li class="hover:bg-gray-200">
-                <a href="staff.html" class="block px-4 py-2">Staff</a>
+                <a href="staff.html" class="block px-4 py-2 text-sm">Staff</a>
               </li>
             </ul>
           </li>
-          <li><a href="join.html">Join</a></li>
+          <li class="hover:text-[#CB4154]"><a href="join.html">Join</a></li>
         </ul>
-      </div>
-    <section class="flex p-6 md:p-10 w-full">
+      </nav>
+    </section>
+
+    <!-- Menu Drawer Section -->
+    <div
+      id="drawer"
+      class="menu-drawer fixed top-0 left-0 w-[250px] h-full bg-white text-black hidden md:hidden"
+    >
+      <button id="close-button" class="p-4">✕ Close</button>
+      <ul class="flex flex-col gap-y-6 p-6 text-lg uppercase">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li class="relative">
+          <button
+            id="events-mobile-button"
+            class="w-full text-left flex items-center z-50"
+          >
+            Events
+            <span class="ml-1">&#x25BC;</span>
+          </button>
+          <ul
+            id="events-mobile-dropdown"
+            class="hidden flex-col bg-white shadow-lg mt-2 z-50"
+          >
+            <li class="hover:bg-gray-200">
+              <a href="upcoming-events.html" class="block px-4 py-2"
+                >Upcoming Events</a
+              >
+            </li>
+            <li class="hover:bg-gray-200">
+              <a href="about2.html" class="block px-4 py-2">Past Events</a>
+            </li>
+            <li class="hover:bg-gray-200">
+              <a href="council-application-guide.html" class="block px-4 py-2"
+                >Council Application Guide</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li><a href="resource.html">Resources</a></li>
+        <li class="relative">
+          <button
+            id="about-us-mobile-button"
+            class="w-full text-left flex items-center z-50"
+          >
+            About Us
+            <span class="ml-1">&#x25BC;</span>
+          </button>
+          <ul
+            id="about-us-mobile-dropdown"
+            class="hidden flex-col bg-white shadow-lg mt-2 z-50"
+          >
+            <li class="hover:bg-gray-200">
+              <a href="whatisScaff.html" class="block px-4 py-2"
+                >What is Sacff?</a
+              >
+            </li>
+            <li class="hover:bg-gray-200">
+              <a href="about2.html" class="block px-4 py-2"
+                >Board Of Directors</a
+              >
+            </li>
+            <li class="hover:bg-gray-200">
+              <a href="staff.html" class="block px-4 py-2">Staff</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+    </div>
+    <section class="flex flex-col gap-y-6 p-6 md:p-16 w-full">
       <h1 class="text-2xl md:text-3xl text-[#cb4154] uppercase">
         BOARD OF DIRECTORS
       </h1>
+      <div class="flex p-12 justify-center gap-x-10">
+        <!-- Member 1 -->
+        <div class="flex flex-col bg-[#fbf1f2] gap-y-6 w-full">
+          <img
+            class="w-[378px] h-[378px] object-cover w-full"
+            src="/assets/member1.jpg"
+            alt="Virinderpaul Singh, President"
+          />
+          <h1 class="text-xl text-center">Virinderpaul Singh, President</h1>
+          <p class="text-md text-center p-6">
+            With an educational background in marketing and journalism,
+            Virinderpaul Singh has seamlessly been able to work in different
+            capacities from accounting, locations and production management at
+            the Directors Guild of Canada for the past eight years. Looking for
+            a way to eventually realize his dreams, he started creating personal
+            projects that could help pivot his career path. All this while
+            working on productions for Disney, Paramount, Netflix, and CBC,
+            which ultimately helped hone his skills as a producer. His passion
+            for focusing on hard-hitting issues within the South Asian diaspora
+            is what gravitates him toward his next project Vinod c/o Edmonton.
+            Always willing to expand upon his craft, Virinderpaul was admitted
+            into the Whistler Film Festival's Producers Lab in 2021, and has
+            recently graduated from the 2023 Reelworld Producers Program, a
+            year-long curriculum that provides mentoring and learning
+            opportunities to build a career as a Producer. Virinderpaul has
+            directed several movies including Lohri (2022), a powerful family
+            drama exploring gender roles in a traditional Punjabi household. In
+            the last five years, he's produced multiple short films and
+            documentaries, which has resulted in his producing a coming-of-age
+            Sikh feature film called Jersey Boy in Hamilton, Ontario.
+          </p>
+        </div>
+        <!-- Member 2 -->
+        <div class="flex flex-col bg-[#fbf1f2] gap-y-6 w-full">
+          <img
+            class="w-[378px] h-[378px] object-cover w-full"
+            src="/assets/member2.jpg"
+            alt="Asis Sethi, Co-President"
+          />
+          <h1 class="text-xl text-center">Asis Sethi, Co-President</h1>
+          <p class="text-md text-center p-6">
+            An alumna of TIFF SERIES ACCELERATOR, WOMEN IN DIRECTOR'S CHAIR and
+            a former PLAYBACK MAGAZINE's 10 to Watch, Asis Sethi is a South
+            Asian Canadian filmmaker whose career in broadcasting spans over 15
+            years as a producer and a host on lifestyle shows. Asis has created
+            over 100 hours of content for television. Her REMI Award winning
+            short on menstruation, ‘A BLOODY MESS’, was screened at 30 film
+            festivals. Her 16-episode documentary television series on Sikh
+            shrines in India, ‘DARSHAN DEKH JEEVA’, was funded by the OMNI
+            DOCUMENTARY FUND. She directed a documentary on post 9/11 effects on
+            turban wearers titled 'THE COLOURFUL CROWN' which premiered on OMNI
+            Television nationally. Her short film on postpartum depression
+            titled 'ROCK THE CRADLE' was funded by the CANADA COUNCIL FOR THE
+            ARTS. Asis's feature project 'SLAM DUNK, SEHAJ!' was supported by
+            the CFC/NETFLIX CALLING CARD ACCELERATOR and also won Caribbean
+            Tales' THE BIG PITCH at the Toronto International Film Festival in
+            2022. Asis was one of the 25 pitch participants for the NETFLIX
+            BANFF DIVERSITY OF VOICES Fellowship for the BANFF WORLD MEDIA
+            FESTIVAL 2023. Asis is also a mentor at WIFT Toronto, OYA Black Arts
+            Coalition and the M Film Lab.
+          </p>
+        </div>
+        <!-- Member 3 -->
+        <div class="flex flex-col bg-[#fbf1f2] gap-y-6 w-full">
+          <img
+            class="w-[378px] h-[378px] object-cover w-full"
+            src="/assets/member3.jpg"
+            alt="Shailesh Merai, Chair"
+          />
+          <h1 class="text-xl text-center">Shailesh Merai, Chair</h1>
+          <p class="text-md text-center p-6">
+            Shailesh started his career in films as location and casting
+            assistant and worked his way up as a Production Manager for
+            advertising and documentary films in Mumbai, India before moving to
+            Canada. Starting a new life in Canada, he redirected his career in
+            marketing after graduating from Humber in web technologies. Soon he
+            set up Omesa Creative Studio, to help SMBs leverage the web to scale
+            their business. He has been providing digital marketing and business
+            growth services for the past 15 years. He is now rekindling his
+            passion and childhood dream of making films under the banner of
+            Molten Rock and serving on the board as Chairman for South Asian
+            Canadian Film Federation (SACFF). His purpose to join SACFF is to
+            motivate and inspire the youth and everyone to not give up their
+            dreams; to continue forward until they are achieved.
+          </p>
+        </div>
+      </div>
+      <div class="flex p-12 justify-center gap-x-10">
+        <!-- Member 4 -->
+        <div class="flex flex-col bg-[#fbf1f2] gap-y-6 w-full">
+          <img
+            class="w-[378px] h-[378px] object-cover w-full"
+            src="/assets/member4.jpg"
+            alt="Virinderpaul Singh, President"
+          />
+          <h1 class="text-xl text-center">Carroll Chiramel, Vice President</h1>
+          <p class="text-md text-center p-6">
+            Carroll Chiramel, an Indo-Canadian editor, producer, and director,
+            is a distinguished alumnus of the Canadian Film Centre (CFC) 2022
+            Norman Jewison Film Program. Carroll has achieved remarkable success
+            with various projects. Notably, his feature film "Under the Sun"
+            garnered the audience choice award at the 2015 Mill Valley Film
+            Festival in California. Additionally, his works have been featured
+            on platforms like Amazon Prime and Super Channel, with the feature
+            film "Dance Together" being one of the highlights. His award-winning
+            short film "Forbidden Tikka Masala" secured seven international
+            awards, including recognition at the Edmonton International Film
+            Festival 2018, a prestigious OSCAR Qualifying Film Festival, and
+            TIFF Film Circuit. Furthermore, his short film "Meet the Parents"
+            earned the Best Short Film title at the African Movie Academy Awards
+            in 2016. Recently, his short film "Sight" was selected for the
+            esteemed Fantasia Film Festival 2023. His films have been showcased
+            at renowned festivals such as the Toronto Short Film Festival,
+            Toronto Black Film Festival, Edmonton International Film Festivals,
+            Mill Valley Film Festival, and Milledgeville Film Festival, among
+            others.
+          </p>
+        </div>
+        <!-- Member 5 -->
+        <div class="flex flex-col bg-[#fbf1f2] gap-y-6 w-full">
+          <img
+            class="w-[378px] h-[378px] object-cover w-full"
+            src="/assets/member5.jpg"
+            alt="Asis Sethi, Co-President"
+          />
+          <h1 class="text-xl text-center">Priyanka Shailendra, Treasurer</h1>
+          <p class="text-md text-center p-6">
+            Priyanka has been a part of the Indian film industry (Bollywood) for
+            over 15 years and has explored and gained a vast amount of
+            experience across various aspects of filmmaking, including
+            production, direction, and writing. As a member of a renowned
+            Bollywood family known for their contributions as writers and
+            lyricists, Priyanka has grown up with films and music and is
+            constantly aspiring to create magic through visuals. Currently, she
+            has three Bollywood feature films in progress in India. She has also
+            recently worked as an Assistant to producer/showrunner- Shazia Javed
+            for her drama series "Potluck Ladies.” Along with many other
+            reputable and known producers within the Canadian Film and
+            television industry. Her short film "The unnamed crime" was
+            nominated for the Mumbai International women's film festival-2013.
+            Her series titled "Frozen" was selected for the pitch workshop as
+            part of the Canadian film festival's official selection-2023,
+            earning critical acclaim from senior jurors within the industry.
+            Recently, Priyanka has produced, directed, and written her short
+            film "Dark Memories", which was screened at Filmi festival-2023. One
+            of her short films Produced in association with Millennial X,
+            ‘Friends at my expense’ was also showcased at the Nuit Blanche
+            Festival Toronto- 2023.
+          </p>
+        </div>
+        <!-- Member 6 -->
+        <div class="flex flex-col bg-[#fbf1f2] gap-y-6 w-full">
+          <img
+            class="w-[378px] h-[378px] object-cover w-full"
+            src="/assets/member6.jpg"
+            alt="Shailesh Merai, Chair"
+          />
+          <h1 class="text-xl text-center">Jaskaran Singh, Secretary</h1>
+          <p class="text-md text-center p-6">
+            Jaskaran Singh is a Sikh-Canadian filmmaker who in the last four
+            years has written, directed, and produced multiple short films
+            exploring the space between identity and inclusion, all while
+            cementing South Asian voices prominently on screen. His credits
+            include: A TURBAN & A BEARD, a docu-drama highlighting Sikh hate
+            crimes in America in the two decades since 9/11; ME|HER, a South
+            Asian romantic dramedy about two friends reconciling their feelings
+            after ten years; and COPELESS, a psychological drama about
+            generational trauma, guilt, and grief. Jaskaran's feature script
+            JERSEY BOY was a Quarterfinalist in The Academy Nicholl Fellowships
+            in Screenwriting 2022, made The CAPE List 2021 (curated by The Black
+            List), and won the 2020 Whistler Film Festival's Power Pitch
+            Competition. He aims to make his directorial debut with it in 2024.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Footer section -->
+    <section
+      class="flex flex-col py-8 px-4 md:px-8 justify-center items-center"
+    >
+      <div class="flex flex-col text-center w-full">
+        <h2 class="text-sm md:text-md font-medium text-center py-4 md:py-8">
+          COPYRIGHT © 2024 SOUTH ASIAN CANADIAN FILMMAKERS FEDERATION - ALL
+          RIGHTS RESERVED.
+        </h2>
+        <nav class="flex w-full justify-center items-center">
+          <ul
+            class="flex flex-col md:flex-row w-full gap-y-3 md:gap-y-0 md:gap-x-5 justify-center text-md md:text-lg text-[#CB4154]"
+          >
+            <li><a href="index.html">Home</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="upcoming-events.html">Upcoming Events</a></li>
+            <li><a href="resource.html">Resources</a></li>
+            <li><a href="whatisScaff.html">What is Scaff?</a></li>
+            <li><a href="board-of-directors.html">Board of Directors</a></li>
+            <li><a href="staff.html">Staff</a></li>
+            <li><a href="join.html">Join</a></li>
+          </ul>
+        </nav>
+      </div>
     </section>
     <script>
-        document.getElementById("menu-button").addEventListener("click", () => {
-          document.getElementById("drawer").classList.toggle("hidden");
+      document.getElementById("menu-button").addEventListener("click", () => {
+        document.getElementById("drawer").classList.toggle("hidden");
+      });
+      document.getElementById("close-button").addEventListener("click", () => {
+        document.getElementById("drawer").classList.add("hidden");
+      });
+
+      function toggleDropdown(buttonId, dropdownId) {
+        const button = document.getElementById(buttonId);
+        const dropdown = document.getElementById(dropdownId);
+
+        button.addEventListener("click", () => {
+          dropdown.classList.toggle("hidden");
         });
-        document.getElementById("close-button").addEventListener("click", () => {
-          document.getElementById("drawer").classList.add("hidden");
+
+        window.addEventListener("click", (event) => {
+          if (
+            !button.contains(event.target) &&
+            !dropdown.contains(event.target)
+          ) {
+            dropdown.classList.add("hidden");
+          }
         });
-  
-        function toggleDropdown(buttonId, dropdownId) {
-          const button = document.getElementById(buttonId);
-          const dropdown = document.getElementById(dropdownId);
-  
-          button.addEventListener("click", () => {
-            dropdown.classList.toggle("hidden");
-          });
-  
-          window.addEventListener("click", (event) => {
-            if (
-              !button.contains(event.target) &&
-              !dropdown.contains(event.target)
-            ) {
-              dropdown.classList.add("hidden");
-            }
-          });
-        }
-  
-        // Desktop dropdowns
-        toggleDropdown("events-desktop-button", "events-desktop-dropdown");
-        toggleDropdown("about-us-desktop-button", "about-us-desktop-dropdown");
-  
-        // Mobile dropdowns
-        toggleDropdown("events-mobile-button", "events-mobile-dropdown");
-        toggleDropdown("about-us-mobile-button", "about-us-mobile-dropdown");
-      </script>
+      }
+
+      // Desktop dropdowns
+      toggleDropdown("events-desktop-button", "events-desktop-dropdown");
+      toggleDropdown("about-us-desktop-button", "about-us-desktop-dropdown");
+
+      // Mobile dropdowns
+      toggleDropdown("events-mobile-button", "events-mobile-dropdown");
+      toggleDropdown("about-us-mobile-button", "about-us-mobile-dropdown");
+    </script>
   </body>
 </html>
