@@ -226,7 +226,8 @@
           roots to connect, collaborate, and thrive.
         </p>
         <button
-          class="bg-[#CB4154] px-4 py-2 md:px-6 md:py-3 text-white font-bold uppercase" onclick="redirectToWhatIsSacff()"
+          class="bg-[#CB4154] px-4 py-2 md:px-6 md:py-3 text-white font-bold uppercase"
+          onclick="redirectToWhatIsSacff()"
         >
           Learn More
         </button>
@@ -250,7 +251,8 @@
           Canada.
         </p>
         <button
-          class="bg-[#CB4154] px-4 py-2 text-white font-bold uppercase flex" onclick="redirectToPrograms()"
+          class="bg-[#CB4154] px-4 py-2 text-white font-bold uppercase flex"
+          onclick="redirectToPrograms()"
         >
           Learn More
         </button>
@@ -265,7 +267,8 @@
           are organized to connect Canadian creators with each other.
         </p>
         <button
-          class="bg-[#CB4154] px-4 py-2 text-white font-bold uppercase flex" onclick="redirectToEvents()"
+          class="bg-[#CB4154] px-4 py-2 text-white font-bold uppercase flex"
+          onclick="redirectToEvents()"
         >
           Upcoming Events
         </button>
@@ -282,7 +285,8 @@
           organizations and much more.
         </p>
         <button
-          class="bg-[#CB4154] px-4 py-2 text-white font-bold uppercase flex" onclick="redirectToResources()"
+          class="bg-[#CB4154] px-4 py-2 text-white font-bold uppercase flex"
+          onclick="redirectToResources()"
         >
           Helpful Links
         </button>
@@ -367,7 +371,8 @@
           >
           <div class="flex justify-start py-4 lg:py-6">
             <button
-              class="bg-[#CB4154] px-6 py-3 lg:px-4 lg:py-4 text-white font-bold uppercase" onclick="redirectToContact()"
+              class="bg-[#CB4154] px-6 py-3 lg:px-4 lg:py-4 text-white font-bold uppercase"
+              onclick="redirectToContact()"
             >
               Drop US A Line !
             </button>
@@ -390,7 +395,22 @@
         </div>
       </div>
     </section>
-
+    <!-- Cookies Code -->
+    <div
+      id="cookie-banner"
+      class="flex fixed z-[300] bottom-0 left-0 right-0 bg-gray-800 text-white p-5 justify-between items-center flex-col md:flex-row md:space-x-4"
+    >
+      <p class="text-lg text-center md:text-left league-spartan">
+        We use cookies to enhance your experience. By continuing to visit this
+        site, you agree to our use of cookies.
+      </p>
+      <button
+        id="accept-cookies"
+        class="bg-blue-500 text-white py-2 px-4 mt-3 md:mt-0 rounded-full league-spartan"
+      >
+        Accept Cookies
+      </button>
+    </div>
     <!-- Footer section -->
     <section
       class="flex flex-col py-8 px-4 md:px-8 justify-center items-center"
@@ -416,6 +436,35 @@
         </nav>
       </div>
     </section>
+    <script>
+      // Cookies Logic
+      document
+        .getElementById("accept-cookies")
+        .addEventListener("click", function () {
+          // Set a cookie indicating that the user has accepted cookies
+          document.cookie =
+            "cookiesAccepted=true; path=/; max-age=" + 60 * 60 * 24 * 365; // Cookie valid for 1 year
+
+          // Hide the cookie banner
+          document.getElementById("cookie-banner").style.display = "none";
+
+          // Show a dialog box confirming the acceptance
+          alert("Thank you! You have accepted cookies.");
+        });
+      function checkCookiesAccepted() {
+        if (
+          document.cookie
+            .split("; ")
+            .find((row) => row.startsWith("cookiesAccepted"))
+        ) {
+          // Cookie is set, hide the banner
+          document.getElementById("cookie-banner").style.display = "none";
+        }
+      }
+
+      window.onload = checkCookiesAccepted;
+    </script>
+    F
     <script>
       document.getElementById("menu-button").addEventListener("click", () => {
         document.getElementById("drawer").classList.toggle("hidden");

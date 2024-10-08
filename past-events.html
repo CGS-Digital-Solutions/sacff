@@ -144,7 +144,9 @@
                 >
               </li>
               <li class="hover:bg-gray-200">
-                <a href="board-of-directors.html" class="block px-4 py-2 text-sm"
+                <a
+                  href="board-of-directors.html"
+                  class="block px-4 py-2 text-sm"
                   >Board Of Directors</a
                 >
               </li>
@@ -226,7 +228,9 @@
       </ul>
     </div>
     <!-- Past Events Section -->
-    <section class="flex flex-col gap-y-6 p-6 md:px-16 lg:px-40 md:py-16 w-full">
+    <section
+      class="flex flex-col gap-y-6 p-6 md:px-16 lg:px-40 md:py-16 w-full"
+    >
       <h1 class="text-2xl md:text-3xl text-[#cb4154] font-semibold">
         “HOW TO PITCH TO PRODUCTION PARTNERS” PANEL & SOUTH ASIAN FILMMAKERS
         NETWORKING MIXER (MAY 13, 2024)
@@ -298,7 +302,9 @@
       </div>
     </section>
 
-    <section class="flex flex-col gap-y-6 p-6 md:px-16 lg:px-40 md:py-16 w-full">
+    <section
+      class="flex flex-col gap-y-6 p-6 md:px-16 lg:px-40 md:py-16 w-full"
+    >
       <h1 class="text-2xl md:text-3xl text-[#cb4154] font-semibold">
         SACFF - THE LAUNCH (SEPTEMBER 15, 2023)
       </h1>
@@ -352,6 +358,22 @@
         </div>
       </div>
     </section>
+    <!-- Cookies Code -->
+    <div
+      id="cookie-banner"
+      class="flex fixed z-[300] bottom-0 left-0 right-0 bg-gray-800 text-white p-5 justify-between items-center flex-col md:flex-row md:space-x-4"
+    >
+      <p class="text-lg text-center md:text-left league-spartan">
+        We use cookies to enhance your experience. By continuing to visit this
+        site, you agree to our use of cookies.
+      </p>
+      <button
+        id="accept-cookies"
+        class="bg-blue-500 text-white py-2 px-4 mt-3 md:mt-0 rounded-full league-spartan"
+      >
+        Accept Cookies
+      </button>
+    </div>
     <!-- Footer section -->
     <section
       class="flex flex-col py-8 px-4 md:px-8 justify-center items-center"
@@ -377,6 +399,34 @@
         </nav>
       </div>
     </section>
+    <script>
+      // Cookies Logic
+      document
+        .getElementById("accept-cookies")
+        .addEventListener("click", function () {
+          // Set a cookie indicating that the user has accepted cookies
+          document.cookie =
+            "cookiesAccepted=true; path=/; max-age=" + 60 * 60 * 24 * 365; // Cookie valid for 1 year
+
+          // Hide the cookie banner
+          document.getElementById("cookie-banner").style.display = "none";
+
+          // Show a dialog box confirming the acceptance
+          alert("Thank you! You have accepted cookies.");
+        });
+      function checkCookiesAccepted() {
+        if (
+          document.cookie
+            .split("; ")
+            .find((row) => row.startsWith("cookiesAccepted"))
+        ) {
+          // Cookie is set, hide the banner
+          document.getElementById("cookie-banner").style.display = "none";
+        }
+      }
+
+      window.onload = checkCookiesAccepted;
+    </script>
     <!-- NavBar Script -->
     <script>
       document.getElementById("menu-button").addEventListener("click", () => {
